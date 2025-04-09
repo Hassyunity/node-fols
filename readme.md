@@ -1,8 +1,9 @@
-# Hassy's Portfolio 🚀
+# RealTimeX ⚡
 
-Hassy's Portfolio is a personal portfolio built with Node.js, Express.js, and EJS. It showcases my projects, skills, and offers a contact form for users to get in touch with me.
+Hassy's Portfolio is a personal portfolio built with **Node.js**, **Express.js**, and **EJS**. It showcases my projects, skills, and offers a contact form for users to get in touch with me.
 
 ## 🚀 Features
+
 - 📃 Display of my personal and professional information.
 - 🖥️ Portfolio showcasing projects with detailed descriptions.
 - ✉️ Contact form that allows users to send messages directly via email.
@@ -10,30 +11,45 @@ Hassy's Portfolio is a personal portfolio built with Node.js, Express.js, and EJ
 
 ## 📦 Installation
 
-Clone the repository:
+1. **Clone the repository:**  
+   ```bash
+   git clone git@github.com:Hassyunity/node-fols.git
+   cd node-fols
+   ```
 
-```bash
-git clone git@github.com:Hassyunity/Portfolio.git
-cd Portfolio
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-npm install
-Start the server:
+3. **Start the server:**
+   ```bash
+   npm start
+   ```
 
-netlify deploy
+## 🚀 Deploying to Netlify
 
-🖥️ Technologies Used
-Node.js: JavaScript runtime for building scalable applications.
+1. **Install Netlify CLI globally:**
+   ```bash
+   npm install netlify-cli -g
+   ```
 
-Express.js: A web framework for Node.js to build fast and robust APIs.
+2. **Deploy your application:**
+   ```bash
+   netlify deploy
+   ```
 
-EJS: Template engine for rendering HTML with embedded JavaScript.
+Once deployed, your application will be accessible at:
+```
+https://your-site-name.netlify.app/
+```
 
-HTML / CSS / JavaScript: For frontend design and functionality.
+## 🖥️ Technologies Used
+- Node.js
+- Express.js
+- EJS
+- HTML / CSS / JavaScript
+- dotenv
 
-Nodemailer: For sending emails from the contact form.
-
-dotenv: For managing environment variables securely.
-
-Git: Version control to manage project history.pt
-📜 License
+## 📜 License
 This project is licensed under the MIT License.
