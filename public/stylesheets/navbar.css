@@ -4,7 +4,7 @@
     top: 0px;
     left: 0px;
     right: 20px;
-    width: auto;
+    width: auto; /* S'assure que la navbar occupe toute la largeur */
     height: 60px;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
@@ -24,22 +24,34 @@
   
   .menu ul {
     list-style: none;
-    font-weight: 400 - normal;
+    font-weight: normal;
     display: flex;
-    gap: 45px;
-    margin-right: 20vh;
-    padding: 20px;
-  }
-  
-  
-  .menu ul li a {
-    text-decoration: none;
+    gap: 20px; /* Ajout d'un espace entre les éléments du menu */
     color: #999;
     font-size: 16px;
     font-family: lato, sans-serif;
-    transition: color 0.3s;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: inherit; /* Assure que la couleur de base est héritée */
+    transition: color 0.3s, font-weight 0.3s, text-decoration 0.3s; /* Animation fluide sur les couleurs et le texte */
   }
   
   .menu ul li a:hover {
     color: #cccccc;
+    text-decoration: none
   }
+  
+  section {
+    background: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  .menu ul li a.active {
+    color: #00d6b4; /* Couleur active du lien */
+    font-weight: bold; /* Lien actif en gras */
+    text-decoration: underline; /* Décoration pour l'élément actif */
+  }
+  
