@@ -6,6 +6,9 @@
   </head>
   
   <body>
+    <% if (message === 'success') { %>
+      <div class="success-message" id="success-message">✅ Votre message a été envoyé avec succès !</div>
+    <% } %>
     <header class="navbar">
       <%- include('partials/navbar') %>
     </header>
@@ -25,5 +28,6 @@
       </div>
     </section>
     <script src="javascripts/index.js"></script>
+    <script src="javascripts/notifications.js"></script>
   </body>  
 </html>

@@ -77,3 +77,17 @@ section {
   color: white;
   border-color: white;
 }
+
+/* message */
+.success-message {
+  background-color: transparent;
+  color: #00d6b4;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
