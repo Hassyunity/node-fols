@@ -1,0 +1,79 @@
+/* HERO SECTION */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: lato;
+  font-weight: 300 - light;
+  font-size: 48px;
+  overflow: hidden;
+  padding-top: 60px;
+  z-index: 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/nubelson.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+/* CONTENT SECTION */
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: lato, sans-serif;
+  font-size: 26px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre horizontalement les éléments */
+  justify-content: center;
+  text-align: center;
+}
+/* GENERAL SECTION STYLING */
+section {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+.menu ul li a.active {
+  color: #00d6b4;
+  font-weight: bold;
+}
+
+.hero-content .contact {
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: lato, sans-serif;
+  color: #00d6b4;
+  background-color: transparent;
+  border: 2px solid #00d6b4;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-content .contact:hover {
+  color: white;
+  border-color: white;
+}
