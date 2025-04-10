@@ -1,22 +1,23 @@
 require('dotenv').config();
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  const message = req.query.message || null; // 👈 Définit message même s’il est absent
+router.get('/', function (req, res, next) {
+  const message = req.query.message || null;
   res.render('index', { title: 'Express', message });
 });
 
-
 /* GET about page. */
-router.get('/about', function(req, res, next) {
+router.get('/about', function (req, res, next) {
   res.render('about', { title: 'About' });
 });
 
 /* GET contact page. */
-router.get('/contact', function(req, res, next) {
+router.get('/contact', function (req, res, next) {
   res.render('contact', { title: 'Contact' });
 });
 
@@ -32,20 +33,37 @@ router.post('/submit-contact', async (req, res) => {
     }
   });
 
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER,
-    subject: `Message de ${name}`,
-    text: message,
-    replyTo: email
-  };
+  // Lire le template HTML
+  const templatePath = path.join(__dirname, '../templates/mail_form.html');
+  let htmlContent = fs.readFileSync(templatePath, 'utf-8');
+
+  // Injecter les variables dynamiques
+  htmlContent = htmlContent
+    .replace('{{name}}', name)
+    .replace('{{email}}', email)
+    .replace('{{message}}', message.replace(/\n/g, '<br>'));
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `Message de ${name}`,
+      replyTo: email,
+      html: htmlContent,
+      attachments: [
+        {
+          filename: 'ia.jpg',
+          path: path.join(__dirname, '../public/images/ia.jpg'),
+          cid: 'logoIA'
+        }
+      ]
+    };    
 
   try {
     await transporter.sendMail(mailOptions);
     res.redirect('/?message=success');
   } catch (error) {
     console.error(error);
-    res.status(500).send('❌ Erreur lors de l\'envoi du message.');
+    res.status(500).send("❌ Erreur lors de l'envoi du message.");
   }
 });
 
