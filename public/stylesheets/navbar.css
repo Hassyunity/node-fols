@@ -44,11 +44,6 @@
     text-decoration: none
   }
   
-  section {
-    background: #1e1e1e;
-    color: #ffffff;
-  }
-  
   .menu ul li a.active {
     color: #00d6b4; /* Couleur active du lien */
     font-weight: bold; /* Lien actif en gras */
