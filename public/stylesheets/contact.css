@@ -60,21 +60,3 @@
     transition: background-color 0.3s ease;
   }
   
-  /* FOOTER */
-  .footer-inside {
-    margin-top: auto;
-    margin-bottom: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #444;
-    text-align: center;
-    color: #00d6b4;
-    font-size: 14px;
-    font-family: 'Lato', sans-serif;
-  }
-  
-  .footer-inside p {
-    margin: 5px 0;
-  }
-  .vibes {
-    font-size: 19px;
-   }

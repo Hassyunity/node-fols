@@ -91,3 +91,22 @@ section {
   font-size: 16px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+/* FOOTER */
+.footer-inside {
+  margin-top: auto;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  text-align: center;
+  color: #00d6b4;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+}
+
+.footer-inside p {
+  margin: 5px 0;
+}
+.vibes {
+  font-size: 19px;
+ }
