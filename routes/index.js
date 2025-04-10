@@ -33,10 +33,11 @@ router.post('/submit-contact', async (req, res) => {
   });
 
   const mailOptions = {
-    from: email,
+    from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
     subject: `Message de ${name}`,
-    text: message
+    text: message,
+    replyTo: email
   };
 
   try {
