@@ -1,0 +1,41 @@
+.content {
+  background-image: url('/images/akona.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.about-text {
+  color: white;
+  text-align: left; /* Améliore la lisibilité du texte */
+  padding: 40px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family: 'Lato', sans-serif;
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  
+  margin-top: 20vh;
+  margin-left: 20vh;
+  margin-right: 50%;
+  width: auto; /* Conserve la largeur actuelle sans changement */
+}
+
+.about-text h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.about-text p {
+  line-height: 1.8;
+  margin-bottom: 15px; /* Espacement entre les paragraphes */
+  max-width: 80%; /* Limite la largeur du texte pour qu'il soit plus lisible */
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  margin-right: 0 !important;
+  width: auto !important;
+  color: black !important;
+}

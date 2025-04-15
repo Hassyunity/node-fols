@@ -1,3 +1,8 @@
+body {
+  background: #2C2E25;
+  color: #ffffff;
+}
+
 /* HERO SECTION */
 .hero {
   position: relative;
@@ -98,7 +103,11 @@ section {
   margin-bottom: 30px;
   padding-top: 20px;
   border-top: 1px solid #444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
+  gap: 20vh;
   color: #00d6b4;
   font-size: 14px;
   font-family: 'Lato', sans-serif;
@@ -107,6 +116,8 @@ section {
 .footer-inside p {
   margin: 5px 0;
 }
+
 .vibes {
   font-size: 19px;
- }
+}
+

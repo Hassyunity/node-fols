@@ -3,7 +3,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    right: 5%;
+    right: 0%;
     width: auto;
     height: 60px;
     background-color: rgba(0, 0, 0, 0.1);
@@ -20,6 +20,11 @@
     font-family: lato;
     color: white;
     font-weight: bold;
+  }
+
+  .logo sup {
+    font-size: 14px;
+    vertical-align: super;
   }
   
   .menu ul {
