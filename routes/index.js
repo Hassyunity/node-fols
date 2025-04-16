@@ -8,7 +8,7 @@ const path = require('path');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   const message = req.query.message || null;
-  res.render('index', { title: 'Express', message });
+  res.render('index', { title: 'Code Vibes', message });
 });
 
 /* GET about page. */
