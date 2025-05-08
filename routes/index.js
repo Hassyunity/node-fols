@@ -21,6 +21,20 @@ router.get('/contact', function (req, res, next) {
   res.render('contact', { title: 'Contact' });
 });
 
+/* GET Project Details Pages */
+router.get('/projects/babels', function (req, res) {
+  res.render('partials/projects/babels', {
+    title: 'Détail – Babel Goods'
+  });
+});
+
+/* GET Hassistante Project Detail Page */
+router.get('/projects/hassistante', function (req, res) {
+  res.render('partials/projects/hassistante', {
+    title: 'Détail – Hassistante'
+  });
+});
+
 /* POST contact form */
 router.post('/submit-contact', async (req, res) => {
   const { name, email, message } = req.body;
