@@ -10,6 +10,9 @@
     <% if (message === 'success') { %>
       <div class="success-message" id="success-message">✅ Votre message a été envoyé avec succès !</div>
     <% } %>
+    <% if (message === 'error') { %>
+      <div class="error-message" id="error-message">❌ Une erreur est survenue lors de l'envoi du message.</div>
+    <% } %>
     <header class="navbar">
       <%- include('partials/navbar') %>
     </header>

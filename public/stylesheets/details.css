@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    background: #f7f9fc;
+    padding: 20px;
+  }
+  
+  .project-container {
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  
+  .tags {
+    margin-top: 0.5rem;
+  }
+  
+  .tag {
+    display: inline-block;
+    background: #e5f0ff;
+    padding: 5px 12px;
+    margin-right: 5px;
+    border-radius: 20px;
+    color: #265eb7;
+    font-weight: bold;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: #265eb7;
+    margin-right: 10px;
+  }
+  
+  .details-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  
+  .details-section div {
+    width: 48%;
+  }
+  

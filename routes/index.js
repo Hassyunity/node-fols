@@ -52,7 +52,7 @@ router.post('/submit-contact', async (req, res) => {
       attachments: [
         {
           filename: 'ia.jpg',
-          path: path.join(__dirname, '../public/images/ia.jpg'),
+          path: path.join(__dirname, '../public/images/lg.png'),
           cid: 'logoIA'
         }
       ]
@@ -63,7 +63,7 @@ router.post('/submit-contact', async (req, res) => {
     res.redirect('/?message=success');
   } catch (error) {
     console.error(error);
-    res.status(500).send("❌ Erreur lors de l'envoi du message.");
+    res.redirect('/?message=error');
   }
 });
 
