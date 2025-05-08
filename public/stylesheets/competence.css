@@ -1,0 +1,73 @@
+.competence-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to right, #2F3228 , #2F3228);
+    color: white;
+    border-radius: 16px;
+  }
+  
+  .competence-blocks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+  }
+  
+  .competence-box {
+    border: 1px solid #00d6b4;
+    border-radius: 20px;
+    padding: 20px 30px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+  }
+  
+  .competence-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  
+  .competence-box p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .sup-tip {
+      font-size: 0.8em;
+      vertical-align: super;
+      cursor: help;
+      color: red;
+    }
+  .title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00d6b4;
+    }
+    
+    .competence-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #00d6b4;
+    }
+    
+    .competence-box p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+    
+    .competence-box strong {
+      color: #00d6b4;
+    }
+    
+    .competence-box span {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 5px 10px;
+      background-color: rgba(0, 214, 180, 0.2);
+      border-radius: 12px;
+      font-size: 0.9rem;
+    }
+  
