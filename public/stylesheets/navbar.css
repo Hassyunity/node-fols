@@ -1,22 +1,22 @@
-/* Version Desktop : inchangée */
+/* --- Navbar --- */
 .navbar {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
   background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 20px;
+  height: 60px;
   z-index: 10;
+  flex-wrap: wrap; /* permet aux enfants de passer à la ligne */
 }
 
 .logo {
-  margin-left: 10%;
   font-size: 24px;
-  font-family: lato;
+  font-family: lato, sans-serif;
   color: white;
   font-weight: bold;
 }
@@ -65,44 +65,41 @@
   color: #cccccc;
 }
 
+.menu-toggle {
+  display: none; /* Cacher sur desktop */
+}
+
 /* --- Responsive (Mobile) --- */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 20px;
     height: auto;
+    padding: 10px 20px;
   }
 
-  .logo {
-    margin-left: 0;
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    color: #00d6b4;
+    cursor: pointer;
+    align-self: flex-end;
     margin-bottom: 10px;
   }
 
   .menu {
     width: 100%;
-    display: none; /* Masquer le menu par défaut */
-    flex-direction: column;
-  }
-
-  .menu ul {
+    display: none; /* Masquer par défaut */
     flex-direction: column;
     gap: 20px;
   }
 
   .menu.active {
-    display: flex; /* Afficher le menu quand actif */
+    display: flex; /* Afficher le menu */
   }
 
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 24px;
-    color: #00d6b4;
+  .menu ul {
+    flex-direction: column;
+    gap: 10px;
   }
-}
-
-/* Par défaut, le bouton menu-toggle est masqué */
-.menu-toggle {
-  display: none;
 }
