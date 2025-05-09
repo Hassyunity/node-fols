@@ -1,64 +1,108 @@
-/* NAVBAR */
+/* Version Desktop : inchangée */
 .navbar {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0%;
-    width: auto;
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 10;
+}
+
+.logo {
+  margin-left: 10%;
+  font-size: 24px;
+  font-family: lato;
+  color: white;
+  font-weight: bold;
+}
+
+.logo sup {
+  font-size: 14px;
+  vertical-align: super;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: lato, sans-serif;
+  color: #999;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s, font-weight 0.3s, text-decoration 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #cccccc;
+}
+
+.menu ul li a.active {
+  color: #00d6b4;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.icon {
+  color: #00d6b4;
+}
+
+.icon:hover {
+  color: #cccccc;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    height: auto;
   }
-  
+
   .logo {
-    margin-left: 10%;
-    font-size: 24px;
-    font-family: lato;
-    color: white;
-    font-weight: bold;
+    margin-left: 0;
+    margin-bottom: 10px;
   }
 
-  .logo sup {
-    font-size: 14px;
-    vertical-align: super;
+  .menu {
+    width: 100%;
+    display: none; /* Masquer le menu par défaut */
+    flex-direction: column;
   }
-  
+
   .menu ul {
-    list-style: none;
-    font-weight: normal;
-    display: flex;
-    gap: 50px;
-    color: #999;
-    font-size: 16px;
-    font-family: lato, sans-serif;
-    transition: color 0.3s ease, font-weight 0.3s ease;
-  }
-  
-  .menu ul li a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s, font-weight 0.3s, text-decoration 0.3s;
-  }
-  
-  .menu ul li a:hover {
-    color: #cccccc;
-    text-decoration: none
-  }
-  
-  .menu ul li a.active {
-    color: #00d6b4;
-    font-weight: bold;
-    text-decoration: underline;
-  }
-  
-  .icon {
-    color: #00d6b4;
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .icon:hover {
-    color: #cccccc;
+  .menu.active {
+    display: flex; /* Afficher le menu quand actif */
   }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #00d6b4;
+  }
+}
+
+/* Par défaut, le bouton menu-toggle est masqué */
+.menu-toggle {
+  display: none;
+}

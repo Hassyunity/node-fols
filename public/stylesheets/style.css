@@ -135,3 +135,49 @@ section {
   font-size: 16px;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
 }
+
+@media (max-width: 768px) {
+  .hero {
+    font-size: 28px;
+    height: 60vh;
+    padding-top: 80px;
+    text-align: center;
+  }
+
+  .hero-content .contact {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .content {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+
+  .footer-inside {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .vibes {
+    font-size: 16px;
+  }
+
+  .menu ul {
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .menu ul li {
+    width: 100%;
+  }
+
+  .download-cv-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}

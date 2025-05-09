@@ -8,17 +8,16 @@
 
 .about-text {
   color: white;
-  text-align: left; /* Améliore la lisibilité du texte */
+  text-align: left;
   padding: 40px 30px;
   background-color: rgba(0, 0, 0, 0.6);
   font-family: 'Lato', sans-serif;
   backdrop-filter: blur(3px);
   border-radius: 10px;
-  
   margin-top: 20vh;
   margin-left: 20vh;
   margin-right: 50%;
-  width: auto; /* Conserve la largeur actuelle sans changement */
+  width: auto;
 }
 
 .about-text h1 {
@@ -29,8 +28,8 @@
 
 .about-text p {
   line-height: 1.8;
-  margin-bottom: 15px; /* Espacement entre les paragraphes */
-  max-width: 80%; /* Limite la largeur du texte pour qu'il soit plus lisible */
+  margin-bottom: 15px;
+  max-width: 80%;
 }
 
 .navbar {

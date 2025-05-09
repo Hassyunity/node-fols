@@ -129,4 +129,26 @@
     pointer-events: none;
     user-select: none;
   }
-  
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    padding: 20px;
+  }
+
+  .projects {
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card {
+    min-width: 260px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .scroll-btn {
+    display: none; /* Cacher les flèches sur mobile pour navigation swipe */
+  }
+}
