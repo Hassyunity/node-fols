@@ -20,7 +20,7 @@
 .contact-form .form-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 
 .contact-form label {
