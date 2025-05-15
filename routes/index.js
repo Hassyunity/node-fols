@@ -5,6 +5,12 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 
+/* GET graph page. */
+router.get('/graph', function (req, res, next) {
+  res.render('graph', { title: 'Graph' });
+}
+);
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   const message = req.query.message || null;
