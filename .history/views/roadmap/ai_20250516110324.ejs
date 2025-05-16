@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Engineer UML Tree</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .contour {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .titretexte1 {
+      font-size: 30px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 40px;
+    }
+
+    .uml-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .node {
+      background-color: #ffffff;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin: 10px 0;
+      min-width: 240px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .node::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 2px;
+      height: 40px;
+      background-color: #ccc;
+      transform: translateX(-50%);
+    }
+
+    .node:last-child::after {
+      display: none;
+    }
+
+    .children {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      position: relative;
+    }
+
+    .children::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #ccc;
+    }
+
+    .child-line {
+      position: absolute;
+      top: -20px;
+      height: 20px;
+      width: 2px;
+      background-color: #ccc;
+    }
+
+    .child-line.left {
+      left: 25%;
+    }
+
+    .child-line.center {
+      left: 50%;
+    }
+
+    .child-line.right {
+      right: 25%;
+    }
+
+    a.node {
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    a.node:hover {
+      background-color: #00d6b4;
+      color: white;
+      border-color: #00bca2;
+      box-shadow: 0 4px 12px rgba(0, 214, 180, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .children {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="contour">
+    <p><span class="titretexte1">AI Engineer Roadmap (UML Style)</span></p>
+    <div class="uml-tree">
+      <a href="#" class="node">AI Engineer</a>
+
+      <div class="children">
+        <div class="column">
+          <a href="#" class="node">Introduction</a>
+          <div class="children">
+            <a href="#" class="node">AI vs ML</a>
+            <div class="column">
+              <a href="#" class="node">Common Terminology</a>
+              <div class="children">
+                <a href="#" class="node">AI vs AGI</a>
+                <a href="#" class="node">LLMs</a>
+                <a href="#" class="node">Inference</a>
+                <a href="#" class="node">Training</a>
+                <a href="#" class="node">Embeddings</a>
+                <a href="#" class="node">AI Agent</a>
+                <a href="#" class="node">RAG</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <a href="#" class="node">Pre-training</a>
+          <div class="children">
+            <a href="#" class="node">Pre-trained Model</a>
+            <a href="#" class="node">Limitations</a>
+            <div class="column">
+              <a href="#" class="node">OpenAI Model</a>
+              <div class="children">
+                <a href="#" class="node">OpenAI</a>
+                <a href="#" class="node">Capabilities</a>
+                <a href="#" class="node">Cut-off Dates</a>
+              </div>
+            </div>
+            <div class="column">
+              <a href="#" class="node">Popular</a>
+              <div class="children">
+                <a href="#" class="node">Claude</a>
+                <a href="#" class="node">Gemini</a>
+                <a href="#" class="node">Azure</a>
+                <a href="#" class="node">Mistral</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <a href="#" class="node">OpenAI API</a>
+          <div class="children">
+            <a href="#" class="node">Completion API</a>
+            <a href="#" class="node">Writing Prompt</a>
+            <a href="#" class="node">Max Tokens</a>
+            <a href="#" class="node">Token Counting</a>
+            <a href="#" class="node">Pricing</a>
+            <a href="#" class="node">Fine-tuning</a>
+          </div>
+        </div>
+
+        <div class="column">
+          <a href="#" class="node">AI Safety</a>
+          <div class="children">
+            <a href="#" class="node">Prompt Injection Attack</a>
+            <a href="#" class="node">Security</a>
+            <a href="#" class="node">Bias & Fairness</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

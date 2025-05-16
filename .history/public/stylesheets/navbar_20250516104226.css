@@ -54,6 +54,7 @@
 .menu ul li a.active {
   color: #00d6b4;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .icon {
@@ -193,13 +194,3 @@
   transform: rotate(180deg);
 }
 
-/* Quand Roadmap est actif, applique les styles comme .active */
-.menu ul li.submenu.active > .submenu-label {
-  color: #00d6b4;
-  font-weight: bold;
-}
-
-.menu ul li.submenu .dropdown li a.active {
-  color: #00d6b4;
-  font-weight: bold;
-}

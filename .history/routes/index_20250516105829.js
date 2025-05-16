@@ -13,7 +13,7 @@ router.use((req, res, next) => {
 
 /* GET roadmap web page */
 router.get('/roadmap/web', function (req, res) {
-  res.render('roadmap/web', { title: 'Web Developer Journey' });
+  res.render('roadmap/web', { title: 'AI Developer Journey' });
 });
 
 /* GET roadmap Ai page */

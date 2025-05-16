@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roadmap IA Engineer - Style UML</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f9fafb;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #222;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .uml-vertical {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .uml-node {
+      background: #ffffff;
+      border: 2px solid #00bfa6;
+      border-radius: 10px;
+      padding: 12px 18px;
+      margin: 10px 0;
+      font-size: 15px;
+      color: #333;
+      min-width: 250px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .uml-line::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 30px;
+      background-color: #ccc;
+    }
+
+    .uml-node:last-child.uml-line::after {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .uml-node {
+        min-width: auto;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Roadmap - AI Engineer (UML Style)</div>
+    <div class="uml-vertical">
+      <div class="uml-node uml-line">Introduction à l'IA</div>
+      <div class="uml-node uml-line">AI vs ML</div>
+      <div class="uml-node uml-line">Terminologie : AGI, LLM, RAG, Embeddings...</div>
+      <div class="uml-node uml-line">Étude des modèles pré-entraînés</div>
+      <div class="uml-node uml-line">Modèles OpenAI, Claude, Gemini, Mistral</div>
+      <div class="uml-node uml-line">Utilisation des APIs (Completion, Prompt, Fine-tuning)</div>
+      <div class="uml-node uml-line">Comprendre les Tokens, Max Tokens, Pricing</div>
+      <div class="uml-node uml-line">Sécurité de l'IA : Prompt Injection, Fairness</div>
+      <div class="uml-node">Bonnes pratiques & veille technologique</div>
+    </div>
+  </div>
+</body>
+</html>

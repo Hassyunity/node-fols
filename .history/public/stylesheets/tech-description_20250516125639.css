@@ -38,36 +38,19 @@
   margin: 0 auto;
 }
 
-/* Animation battement de cœur */
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.05);
-  }
-  50% {
-    transform: scale(0.97);
-  }
-  75% {
-    transform: scale(1.03);
-  }
-}
-
-/* Appliquer aux éléments data-tech */
+/* Style général des liens cliquables avec data-tech */
 [data-tech] {
   color: black;
   cursor: pointer;
-  animation: heartbeat 4s infinite;
   transition: transform 0.2s ease, color 0.3s ease;
 }
 
-/* Survol : effet de zoom plus marqué */
+/* Agrandissement au survol */
 [data-tech]:hover {
-  transform: scale(0.9);
+  transform: scale(1.08);
 }
 
-/* Style dans la structure tree */
+/* Style général des liens dans la structure tree */
 .tree a[data-tech] {
   background-color: #00d6b4;
   color: black;
@@ -87,3 +70,6 @@
   background-color: #fff;
   border: 1px solid #00d6b4;
 }
+
+/* Suppression de l'animation wiggle */
+@keyframes wiggle {}

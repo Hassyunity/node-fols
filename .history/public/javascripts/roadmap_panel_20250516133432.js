@@ -1,0 +1,116 @@
+// Contenus des descriptions par technologie
+const descriptions = {
+    ai_vs_agi: {
+      title: "AI vs AGI",
+      text: "L'intelligence artificielle (AI) est spécialisée tandis que l'AGI est une intelligence générale.",
+      iframe: ""
+    },
+    llms: {
+      title: "LLMs",
+      text: "Les modèles de langage de grande taille (LLMs) sont des modèles capables de générer du texte.",
+      iframe: ""
+    },
+    inference: {
+      title: "Inference",
+      text: "L'inférence est le processus par lequel un modèle produit des prédictions à partir d'entrées.",
+      iframe: ""
+    },
+    embeddings: {
+      title: "Embeddings",
+      text: "Les embeddings représentent les données sous forme de vecteurs dans un espace multidimensionnel.",
+      iframe: ""
+    },
+    ai_agent: {
+      title: "AI Agent",
+      text: "Un agent IA est un système autonome capable de percevoir son environnement et d'agir.",
+      iframe: ""
+    },
+    rag: {
+      title: "RAG",
+      text: "Retrieval-Augmented Generation est une technique combinant récupération d'informations et génération.",
+      iframe: ""
+    },
+    claude: {
+      title: "Claude",
+      text: "Claude est un modèle d'IA développé pour des tâches spécifiques de compréhension du langage.",
+      iframe: ""
+    },
+    gemini: {
+      title: "Gemini",
+      text: "Gemini est un projet de modèle avancé pour le traitement du langage naturel.",
+      iframe: ""
+    },
+    azure: {
+      title: "Azure",
+      text: "Azure propose des services cloud, dont des APIs d'intelligence artificielle.",
+      iframe: ""
+    },
+    mistral: {
+      title: "Mistral",
+      text: "Mistral est un modèle open source performant pour la génération de texte.",
+      iframe: ""
+    },
+    api: {
+      title: "Completion API",
+      text: "L'API Completion permet d'obtenir des réponses générées par un modèle de langage.",
+      iframe: ""
+    },
+    writing_prompt: {
+      title: "Writing Prompt",
+      text: "Les prompts sont des instructions ou questions envoyées aux modèles pour guider la génération.",
+      iframe: ""
+    },
+    fine: {
+      title: "Fine-tuning",
+      text: "Le fine-tuning consiste à entraîner un modèle préexistant sur des données spécifiques.",
+      iframe: ""
+    },
+    prompt: {
+      title: "Prompt Injection Attack",
+      text: "Une attaque d'injection de prompt tente de manipuler le comportement du modèle.",
+      iframe: ""
+    },
+    security: {
+      title: "Security",
+      text: "La sécurité en IA couvre la protection contre les usages malveillants et les vulnérabilités.",
+      iframe: ""
+    },
+    bias: {
+      title: "Bias & Fairness",
+      text: "Les biais dans les modèles peuvent affecter l'équité des résultats générés.",
+      iframe: ""
+    },
+  };
+  
+  // Fonction pour fermer le panneau
+  function closePanel() {
+    document.getElementById("tech-panel").classList.remove("open");
+  }
+  
+  // Initialisation des événements
+  function initRoadmapPanel() {
+    // Sur chaque lien data-tech
+    document.querySelectorAll('[data-tech]').forEach(el => {
+      el.addEventListener('click', event => {
+        event.preventDefault();
+        const key = el.dataset.tech.trim();
+        const content = descriptions[key];
+        if (content) {
+          document.getElementById('tech-title').textContent = content.title;
+          document.getElementById('tech-text').textContent = content.text;
+          document.getElementById('tech-iframe').innerHTML = content.iframe;
+          document.getElementById('tech-panel').classList.add('open');
+        }
+      });
+    });
+  
+    // Bouton fermeture
+    const closeBtn = document.querySelector('#tech-panel .close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closePanel);
+    }
+  }
+  
+  // Démarrer quand le DOM est prêt
+  document.addEventListener('DOMContentLoaded', initRoadmapPanel);
+  

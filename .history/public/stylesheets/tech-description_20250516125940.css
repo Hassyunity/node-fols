@@ -54,20 +54,19 @@
   }
 }
 
-/* Appliquer aux éléments data-tech */
+/* Style général des éléments data-tech */
 [data-tech] {
   color: black;
   cursor: pointer;
-  animation: heartbeat 4s infinite;
-  transition: transform 0.2s ease, color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Survol : effet de zoom plus marqué */
+/* Animation uniquement au survol */
 [data-tech]:hover {
-  transform: scale(0.9);
+  animation: heartbeat 0.8s ease;
 }
 
-/* Style dans la structure tree */
+/* Style des liens dans la structure tree */
 .tree a[data-tech] {
   background-color: #00d6b4;
   color: black;
@@ -76,7 +75,7 @@
   padding: 5px 10px;
   border-radius: 5px;
   display: inline-block;
-  transition: transform 0.2s ease, background-color 0.3s, color 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
   margin: 2px 0;
 }
 

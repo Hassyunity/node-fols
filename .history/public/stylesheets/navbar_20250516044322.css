@@ -54,6 +54,7 @@
 .menu ul li a.active {
   color: #00d6b4;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .icon {
@@ -176,30 +177,4 @@
     width: max-content;
     padding: 5px 10px;
   }
-}
-
-/* --- Flèche sur le menu Roadmap --- */
-.menu ul li.submenu > span::after {
-  content: "▼";
-  font-size: 15px;
-  color:#00d6b4;
-  margin-left: 6px;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-/* Au survol, rotation de la flèche vers le haut */
-.menu ul li.submenu:hover > span::after {
-  transform: rotate(180deg);
-}
-
-/* Quand Roadmap est actif, applique les styles comme .active */
-.menu ul li.submenu.active > .submenu-label {
-  color: #00d6b4;
-  font-weight: bold;
-}
-
-.menu ul li.submenu .dropdown li a.active {
-  color: #00d6b4;
-  font-weight: bold;
 }

@@ -58,7 +58,7 @@
 [data-tech] {
   color: black;
   cursor: pointer;
-  animation: heartbeat 4s infinite;
+  animation: heartbeat 3s infinite;
   transition: transform 0.2s ease, color 0.3s ease;
 }
 

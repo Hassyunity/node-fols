@@ -58,13 +58,13 @@
 [data-tech] {
   color: black;
   cursor: pointer;
-  animation: heartbeat 4s infinite;
+  animation: heartbeat 2s infinite;
   transition: transform 0.2s ease, color 0.3s ease;
 }
 
 /* Survol : effet de zoom plus marqué */
 [data-tech]:hover {
-  transform: scale(0.9);
+  transform: scale(1.1);
 }
 
 /* Style dans la structure tree */

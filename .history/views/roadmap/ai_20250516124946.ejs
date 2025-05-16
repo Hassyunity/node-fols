@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Developer Journey - IA</title>
+  <link rel="stylesheet" href="/stylesheets/graph.css" />
+  <link rel="stylesheet" href="/stylesheets/tech-description.css" />
+</head>
+<body>
+  <header class="navbar">
+    <%- include('../partials/navbar') %>
+  </header>
+  <section class="content" id="contact">
+    <div class="contour">
+      <p><span class="titretexte1">AI Roadmap :</span></p>
+      <div class="tree">
+        <ul>
+          <li><a href="#">AI</a>
+            <ul>
+                <li><a href="#">Common Terminology</a>
+                    <ul>
+                        <li><a href="#" data-tech="ai_vs_agi">AI vs AGI</a></li>
+                        <li><a href="#" data-tech="llms">LLMs</a></li>
+                        <li><a href="#" data-tech="inference">Inference</a></li>
+                        <li><a href="#" data-tech="Embeddings">Embeddings</a></li>
+                        <li><a href="#" data-tech="ai _agent">AI Agent</a></li>
+                        <li><a href="#" data-tech="rag">RAG</a></li>
+                    </ul>
+                </li>
+              </li>
+              <li><a href="#">Pre-training</a>
+                <ul>
+                    <li><a href="#" data-tech="react">Claude</a></li>
+                    <li><a href="#" data-tech="react">Gemini</a></li>
+                    <li><a href="#" data-tech="react">Azure</a></li>
+                    <li><a href="#" data-tech="react">Mistral</a></li>
+                </ul>
+              </li>
+              <li><a href="#">OpenAI API</a>
+                <ul>
+                  <li><a href="#" data-tech="api">Completion API</a></li>
+                  <li><a href="#" data-tech="writing_prompt">Writing Prompt</a></li>
+                  <li><a href="#" data-tech="fine">Fine-tuning</a></li>
+                </ul>
+              </li>
+              <li><a href="#">AI Safety</a>
+                <ul>
+                  <li><a href="#" data-tech="promp">Prompt Injection Attack</a></li>
+                  <li><a href="#" data-tech="security">Security</a></li>
+                  <li><a href="#" data-tech="bias">Bias & Fairness</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="tech-description"></div>
+      <div id="tech-iframe"></div>
+    </div>
+    <%- include('../partials/footer') %>
+  </section>
+  <script src="/javascripts/index.js"></script>
+  <script src="/javascripts/graph.js"></script>
+</body>
+</html>

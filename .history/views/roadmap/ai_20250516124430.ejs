@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Developer Journey - IA</title>
+  <link rel="stylesheet" href="/stylesheets/graph.css" />
+  <link rel="stylesheet" href="/stylesheets/tech-description.css" />
+</head>
+<body>
+  <header class="navbar">
+    <%- include('../partials/navbar') %>
+  </header>
+  <section class="content" id="contact">
+    <div class="contour">
+      <p><span class="titretexte1">AI Roadmap :</span></p>
+      <div class="tree">
+        <ul>
+          <li><a href="#">AI</a>
+            <ul>
+                <li><a href="#">Common Terminology</a>
+                    <ul>
+                        <li><a href="#">AI vs AGI</a></li>
+                        <li><a href="#">LLMs</a></li>
+                        <li><a href="#">Inference</a></li>
+                        <li><a href="#">Embeddings</a></li>
+                        <li><a href="#">AI Agent</a></li>
+                        <li><a href="#">RAG</a></li>
+                    </ul>
+                </li>
+              </li>
+              <li><a href="#">Pre-training</a>
+                <ul>
+                  <li><a href="#">Popular</a>
+                    <ul>
+                      <li><a href="#">Claude</a></li>
+                      <li><a href="#">Gemini</a></li>
+                      <li><a href="#">Azure</a></li>
+                      <li><a href="#">Mistral</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">OpenAI API</a>
+                <ul>
+                  <li><a href="#">Completion API</a></li>
+                  <li><a href="#">Writing Prompt</a></li>
+                  <li><a href="#">Fine-tuning</a></li>
+                </ul>
+              </li>
+              <li><a href="#">AI Safety</a>
+                <ul>
+                  <li><a href="#">Prompt Injection Attack</a></li>
+                  <li><a href="#">Security</a></li>
+                  <li><a href="#">Bias & Fairness</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="tech-description"></div>
+      <div id="tech-iframe"></div>
+    </div>
+    <%- include('../partials/footer') %>
+  </section>
+  <script src="/javascripts/index.js"></script>
+  <script src="/javascripts/graph.js"></script>
+</body>
+</html>

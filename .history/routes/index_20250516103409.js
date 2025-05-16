@@ -5,20 +5,9 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 
-// ✅ Middleware pour rendre 'path' accessible dans toutes les vues
-router.use((req, res, next) => {
-  res.locals.path = req.path;
-  next();
-});
-
 /* GET roadmap web page */
 router.get('/roadmap/web', function (req, res) {
-  res.render('roadmap/web', { title: 'Web Developer Journey' });
-});
-
-/* GET roadmap Ai page */
-router.get('/roadmap/ai', function (req, res) {
-  res.render('roadmap/ai', { title: 'AI Developer Journey' });
+  res.render('roadmap/web', { title: 'AI Developer Journey' });
 });
 
 /* GET home page. */
@@ -73,20 +62,20 @@ router.post('/submit-contact', async (req, res) => {
     .replace('{{email}}', email)
     .replace('{{message}}', message.replace(/\n/g, '<br>'));
 
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER,
-    subject: `Message de ${name}`,
-    replyTo: email,
-    html: htmlContent,
-    attachments: [
-      {
-        filename: 'ia.jpg',
-        path: path.join(__dirname, '../public/images/lg.png'),
-        cid: 'logoIA'
-      }
-    ]
-  };
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `Message de ${name}`,
+      replyTo: email,
+      html: htmlContent,
+      attachments: [
+        {
+          filename: 'ia.jpg',
+          path: path.join(__dirname, '../public/images/lg.png'),
+          cid: 'logoIA'
+        }
+      ]
+    };    
 
   try {
     await transporter.sendMail(mailOptions);

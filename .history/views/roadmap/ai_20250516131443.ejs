@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Developer Journey - IA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .tree a[data-tech] {
+      background-color: #00d6b4;
+      color: black;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 2px 0;
+      transition: transform 0.3s ease, background-color 0.3s;
+    }
+
+    .tree a[data-tech]:hover {
+      animation: heartbeat 0.8s ease;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.05); }
+      50% { transform: scale(0.97); }
+      75% { transform: scale(1.03); }
+    }
+
+    #tech-panel {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 60%;
+      height: 100%;
+      background-color: white;
+      box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+      transition: right 0.4s ease;
+      z-index: 1000;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #tech-panel.open {
+      right: 0;
+    }
+
+    #tech-panel h2 {
+      margin-top: 0;
+    }
+
+    #tech-panel .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+    }
+  </style>
+  <link rel="stylesheet" href="/stylesheets/graph.css" />
+    <link rel="stylesheet" href="/stylesheets/tech-description.css" />
+</head>
+<body>
+  <header class="navbar">
+    <%- include('../partials/navbar') %>
+  </header>
+
+  <section class="content" id="contact">
+    <div class="contour">
+      <p><span class="titretexte1">AI Roadmap :</span></p>
+      <div class="tree">
+        <ul>
+          <li><a href="#">AI</a>
+            <ul>
+              <li><a href="#">Common Terminology</a>
+                <ul>
+                  <li><a href="#" data-tech="ai_vs_agi">AI vs AGI</a></li>
+                  <li><a href="#" data-tech="llms">LLMs</a></li>
+                  <li><a href="#" data-tech="inference">Inference</a></li>
+                  <li><a href="#" data-tech="Embeddings">Embeddings</a></li>
+                  <li><a href="#" data-tech="ai_agent">AI Agent</a></li>
+                  <li><a href="#" data-tech="rag">RAG</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Pre-training</a>
+                <ul>
+                  <li><a href="#" data-tech="claude">Claude</a></li>
+                  <li><a href="#" data-tech="gemini">Gemini</a></li>
+                  <li><a href="#" data-tech="azure">Azure</a></li>
+                  <li><a href="#" data-tech="mistral">Mistral</a></li>
+                </ul>
+              </li>
+              <li><a href="#">OpenAI API</a>
+                <ul>
+                  <li><a href="#" data-tech="api">Completion API</a></li>
+                  <li><a href="#" data-tech="writing_prompt">Writing Prompt</a></li>
+                  <li><a href="#" data-tech="fine">Fine-tuning</a></li>
+                </ul>
+              </li>
+              <li><a href="#">AI Safety</a>
+                <ul>
+                  <li><a href="#" data-tech="prompt">Prompt Injection Attack</a></li>
+                  <li><a href="#" data-tech="security">Security</a></li>
+                  <li><a href="#" data-tech="bias">Bias & Fairness</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Panel pour les infos techniques -->
+      <div id="tech-panel">
+        <button class="close-btn" onclick="closePanel()">×</button>
+        <h2 id="tech-title">Titre</h2>
+        <p id="tech-text">Texte de description...</p>
+        <div id="tech-iframe"></div>
+      </div>
+
+    </div>
+    <%- include('../partials/footer') %>
+  </section>
+
+  <script>
+    const descriptions = {
+  ai_vs_agi: {
+    title: "AI vs AGI",
+    text: "L’intelligence artificielle (IA) est spécialisée tandis que l’intelligence artificielle générale (AGI) peut s’adapter à toute tâche cognitive humaine.",
+    iframe: `<iframe src="https://www.youtube.com/embed/2ePf9rue1Ao" allowfullscreen></iframe>`
+  },
+  llms: {
+    title: "LLMs",
+    text: "Les grands modèles de langage (LLMs) sont entraînés sur de vastes quantités de données pour comprendre et générer du langage naturel.",
+    iframe: `<iframe src="https://www.youtube.com/embed/z_EfZ6RDKHM" allowfullscreen></iframe>`
+  },
+  inference: {
+    title: "Inference",
+    text: "L'inférence est le processus d'utilisation d'un modèle entraîné pour produire des prédictions ou des réponses.",
+    iframe: `<iframe src="https://www.youtube.com/embed/p3U2MbugvC8" allowfullscreen></iframe>`
+  },
+  Embeddings: {
+    title: "Embeddings",
+    text: "Les embeddings sont des représentations numériques de concepts permettant aux modèles de comprendre les relations sémantiques.",
+    iframe: `<iframe src="https://www.youtube.com/embed/YjR3eM6dSxA" allowfullscreen></iframe>`
+  },
+  ai_agent: {
+    title: "AI Agent",
+    text: "Un agent IA est un système autonome qui peut percevoir son environnement, raisonner, et agir pour atteindre ses objectifs.",
+    iframe: `<iframe src="https://www.youtube.com/embed/CFBuw9uU0j0" allowfullscreen></iframe>`
+  },
+  rag: {
+    title: "RAG (Retrieval-Augmented Generation)",
+    text: "RAG combine les modèles génératifs avec la recherche d'information pour fournir des réponses plus précises.",
+    iframe: `<iframe src="https://www.youtube.com/embed/YOeM_AAKuRc" allowfullscreen></iframe>`
+  },
+  claude: {
+    title: "Claude",
+    text: "Claude est un assistant d'intelligence artificielle développé par Anthropic, conçu pour être sûr et utile dans les tâches de langage naturel.",
+    iframe: `<iframe src="https://www.youtube.com/embed/wJ8dZy17xF0" allowfullscreen></iframe>`
+  },
+  gemini: {
+    title: "Gemini",
+    text: "Gemini est une plateforme IA développée par Google pour des applications d'IA avancées.",
+    iframe: `<iframe src="https://www.youtube.com/embed/example1" allowfullscreen></iframe>`
+  },
+  azure: {
+    title: "Azure AI",
+    text: "Azure AI est la plateforme d'intelligence artificielle de Microsoft pour intégrer l'IA dans les applications cloud.",
+    iframe: `<iframe src="https://www.youtube.com/embed/example2" allowfullscreen></iframe>`
+  },
+  mistral: {
+    title: "Mistral",
+    text: "Mistral est un modèle open source d'IA axé sur les performances et la flexibilité.",
+    iframe: `<iframe src="https://www.youtube.com/embed/example3" allowfullscreen></iframe>`
+  },
+  api: {
+    title: "Completion API",
+    text: "L'API Completion permet de générer du texte à partir de prompts personnalisés.",
+    iframe: `<iframe src="https://www.youtube.com/embed/example4" allowfullscreen></iframe>`
+  },
+  writing_prompt: {
+    title: "Writing Prompt",
+    text: "Les prompts d’écriture sont des instructions utilisées pour guider les modèles dans la génération de contenu.",
+    iframe: `<iframe src="https://www.youtube.com/embed/example5" allowfullscreen></iframe>`
+  },
+  fine: {
+    title: "Fine-tuning",
+    text: "Le fine-tuning permet d’adapter un modèle pré-entraîné à un domaine ou tâche spécifique.",
+    iframe: `<iframe src="https://www.youtube.com/embed/example6" allowfullscreen></iframe>`
+  },
+  prompt: {
+    title: "Prompt Injection Attack",
+    text: "Les attaques par injection de prompt manipulent les instructions données à un modèle pour produire des résultats inattendus.",
+    iframe: `<iframe src="https://www.youtube.com/embed/example7" allowfullscreen></iframe>`
+  },
+  security: {
+    title: "Security",
+    text: "La sécurité en IA vise à protéger les modèles et leurs utilisateurs contre les abus et vulnérabilités.",
+    iframe: `<iframe src="https://www.youtube.com/embed/example8" allowfullscreen></iframe>`
+  },
+  bias: {
+    title: "Bias & Fairness",
+    text: "Les biais dans l’IA peuvent mener à des résultats injustes ; il est crucial de développer des modèles équitables.",
+    iframe: `<iframe src="https://www.youtube.com/embed/example9" allowfullscreen></iframe>`
+  }
+};
+
+  </script>
+</body>
+</html>

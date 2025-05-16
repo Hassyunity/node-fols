@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Developer Journey</title>
+  <!-- <link rel="stylesheet" href="/stylesheets/graph.css" /> -->
+  <link rel="stylesheet" href="/stylesheets/tech-description.css" />
+</head>
+<body>
+  <header class="navbar">
+    <%- include('../partials/navbar') %>
+  </header>
+  <section class="content" id="contact">
+  <div class="contour">
+    <p><span class="titretexte1">AI Development Roadmap:</span></p>
+    <div class="tree">
+      <ul>
+        <li><a href="#">Web Dev</a>
+          <ul>
+            <li><a href="#">Frontend</a>
+              <ul>
+                <li><a href="#">Language</a>
+                  <ul>
+                    <li><a href="#" data-tech="html">HTML</a></li>
+                    <li><a href="#" data-tech="css">CSS</a></li>
+                    <li><a href="#" data-tech="react">React</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Frameworks</a>
+                  <ul>
+                    <li><a href="#" data-tech="react">React</a></li>
+                    <li><a href="#" data-tech="vue">Vue</a></li>
+                    <li><a href="#" data-tech="angular">Angular</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Librairies</a>
+                  <ul>
+                    <li><a href="#" data-tech="jquery">jQuery</a></li>
+                    <li><a href="#" data-tech="tailwind">Tailwind</a></li>
+                    <li><a href="#" data-tech="bootstrap">Bootstrap</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">Backend</a>
+              <ul>
+                <li><a href="#">Language</a>
+                  <ul>
+                    <li><a href="#" data-tech="php">PHP</a></li>
+                    <li><a href="#" data-tech="node">Node.js</a></li>
+                    <li><a href="#" data-tech="ruby">Ruby</a></li>
+                    <li><a href="#" data-tech="java">Java</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Databases</a>
+                  <ul>
+                    <li><a href="#" data-tech="mysql">MySQL</a></li>
+                    <li><a href="#" data-tech="mongodb">MongoDB</a></li>
+                    <li><a href="#" data-tech="postgresql">PostgreSQL</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">API</a>
+                  <ul>
+                    <li><a href="#" data-tech="rest">REST</a></li>
+                    <li><a href="#" data-tech="graphql">Graphql</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="tech-description">
+      <h2 id="tech-title"></h2>
+      <p id="tech-text"></p>
+    </div>
+    <div id="tech-iframe"></div>
+  </div>
+    <%- include('../partials/footer') %>
+</section>
+  <script src="/javascripts/index.js"></script>
+  <script src="/javascripts/graph.js"></script>
+</body>
+</html>

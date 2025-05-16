@@ -54,6 +54,7 @@
 .menu ul li a.active {
   color: #00d6b4;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .icon {
