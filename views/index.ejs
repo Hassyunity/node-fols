@@ -4,6 +4,7 @@
     <title><%= title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/works_options.css' />
     <link rel="icon" href="/images/lg.png" type="image/x-icon">
   </head>
   
@@ -26,8 +27,21 @@
   
     <section class="content">
       <div> 
-        <h2>Latest work:</h2>
-        <%- include('partials/works') %>
+        <div class="latest-work-header">
+          <h2>Latest work:</h2>
+          <div class="work-toggle">
+            <button id="btn-personal" class="toggle-button active">Personal</button>
+            <button id="btn-professional" class="toggle-button">Professional</button>
+          </div>
+        </div>
+        <div id="works-personal">
+          <%- include('partials/works') %>
+        </div>
+        
+        <div id="works-professional" style="display: none;">
+          <%- include('partials/works_pro') %>
+        </div>
+        
       </div>
     </section>
     

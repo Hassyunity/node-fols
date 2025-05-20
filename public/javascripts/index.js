@@ -38,3 +38,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const btnPersonal = document.getElementById('btn-personal');
+  const btnProfessional = document.getElementById('btn-professional');
+  const worksPersonal = document.getElementById('works-personal');
+  const worksProfessional = document.getElementById('works-professional');
+
+  btnPersonal.addEventListener('click', () => {
+    worksPersonal.style.display = 'block';
+    worksProfessional.style.display = 'none';
+    btnPersonal.classList.add('active');
+    btnProfessional.classList.remove('active');
+  });
+
+  btnProfessional.addEventListener('click', () => {
+    worksPersonal.style.display = 'none';
+    worksProfessional.style.display = 'block';
+    btnProfessional.classList.add('active');
+    btnPersonal.classList.remove('active');
+  });
+});
