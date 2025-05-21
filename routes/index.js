@@ -97,7 +97,7 @@ router.post('/submit-contact', async (req, res) => {
   }
 });
 
-app.get('/ping', (req, res) => {
+router.get('/ping', (req, res) => {
   res.status(200).send('pong');
 });
 
