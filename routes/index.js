@@ -105,6 +105,12 @@ router.post('/submit-contact', async (req, res) => {
 });
 
 router.get('/ping', (req, res) => {
+  const token = req.query.token;
+
+  if (token !== process.env.PING_TOKEN) {
+    return res.status(401).send('Unauthorized');
+  }
+
   res.status(200).send('pong');
 });
 
