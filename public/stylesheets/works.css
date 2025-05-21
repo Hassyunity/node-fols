@@ -14,8 +14,7 @@
   gap: 40px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  overflow-x: auto; /* Permet le scroll horizontal au doigt */
-  scrollbar-width: none; /* Pour Firefox */
+  scrollbar-width: none;
 }
 .projects::-webkit-scrollbar {
   display: none; /* Pour Chrome/Safari */
@@ -146,6 +145,7 @@
 
   .projects {
     gap: 15px;
+     overflow-x: auto;
   }
 
   .card {
