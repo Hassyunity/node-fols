@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setActiveLink() {
     const currentUrl = window.location.href.split(/[?#]/)[0];
-    menuLinks.forEach(link => {
+    menuLinks.forEach((link) => {
       const linkUrl = link.href.split(/[?#]/)[0];
       if (linkUrl === currentUrl) {
         link.classList.add('active');
@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setActiveLink();
 
-  menuLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      menuLinks.forEach(l => l.classList.remove('active'));
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', function () {
+      menuLinks.forEach((l) => l.classList.remove('active'));
       this.classList.add('active');
     });
   });
 
-  document.querySelectorAll('.submenu > a').forEach(link => {
-    link.addEventListener('click', function(e) {
+  document.querySelectorAll('.submenu > a').forEach((link) => {
+    link.addEventListener('click', function (e) {
       if (window.innerWidth <= 768) {
         e.preventDefault();
         this.parentElement.classList.toggle('active');
@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
-      document.querySelectorAll('.submenu.active').forEach(el => el.classList.remove('active'));
+      document
+        .querySelectorAll('.submenu.active')
+        .forEach((el) => el.classList.remove('active'));
     }
   });
 });

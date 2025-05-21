@@ -2,39 +2,55 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/contact.css' />
-    <link rel="icon" href="/images/lg.png" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/contact.css" />
+    <link rel="icon" href="/images/lg.png" type="image/x-icon" />
   </head>
-  
+
   <body>
-    <header class="navbar">
-      <%- include('partials/navbar') %>
-    </header>
-    
+    <header class="navbar"><%- include('partials/navbar') %></header>
+
     <section class="hero">
       <div class="hero-content">
         <h1>Reach out! Let's start something together.</h1>
       </div>
     </section>
-  
+
     <section class="content" id="contact">
       <form action="/submit-contact" method="POST" class="contact-form">
         <div class="form-group">
           <label for="name">Your Name:</label>
-          <input type="text" id="name" name="name" required placeholder="Enter your name" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Enter your name"
+          />
         </div>
-        
+
         <div class="form-group">
           <label for="email">Your Email Address:</label>
-          <input type="email" id="email" name="email" required placeholder="Enter your email" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter your email"
+          />
         </div>
-    
+
         <div class="form-group">
           <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required placeholder="Enter your message"></textarea>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            placeholder="Enter your message"
+          ></textarea>
         </div>
-        
+
         <div class="form-group">
           <button type="submit" class="submit-btn">Send Message</button>
         </div>

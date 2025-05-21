@@ -1,7 +1,7 @@
 .competence-section {
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(to right, #2F3228, #2F3228);
+  background: linear-gradient(to right, #2f3228, #2f3228);
   color: white;
   border-radius: 16px;
 }
@@ -21,7 +21,9 @@
   width: 300px;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .competence-box:hover {

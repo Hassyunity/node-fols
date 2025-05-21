@@ -1,29 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title><%= title %></title>
-    </head>
-    <body>
-        <!-- templates/mail_form.html -->
-<div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-  <!-- 🖼️ Logo -->
-  <!-- Logo cliquable avec lien -->
-<div style="text-align: center; margin-bottom: 20px;">
-  <a href="https://tonsite.com" target="_blank">
-    <img src="cid:logoIA" alt="Logo IA" style="height: 60px;">
-  </a>
-</div>
-  <h2 style="color: #2c3e50;">📬 Nouveau message depuis le formulaire de contact</h2>
-  <p><strong>Nom :</strong> {{name}}</p>
-  <p><strong>Email :</strong> {{email}}</p>
-  <p><strong>Message :</strong></p>
-  <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd;">
-    {{message}}
-  </p>
-  <hr style="margin: 30px 0;">
-  <footer style="font-size: 0.9em; color: #999;">
-    Ce message vous a été envoyé depuis le site web.
-  </footer>
-</div>
-    </body>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <!-- templates/mail_form.html -->
+    <div
+      style="
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+      "
+    >
+      <!-- 🖼️ Logo -->
+      <!-- Logo cliquable avec lien -->
+      <div style="text-align: center; margin-bottom: 20px">
+        <a href="https://tonsite.com" target="_blank">
+          <img src="cid:logoIA" alt="Logo IA" style="height: 60px" />
+        </a>
+      </div>
+      <h2 style="color: #2c3e50">
+        📬 Nouveau message depuis le formulaire de contact
+      </h2>
+      <p><strong>Nom :</strong> {{name}}</p>
+      <p><strong>Email :</strong> {{email}}</p>
+      <p><strong>Message :</strong></p>
+      <p
+        style="
+          background: #f9f9f9;
+          padding: 15px;
+          border-radius: 5px;
+          border: 1px solid #ddd;
+        "
+      >
+        {{message}}
+      </p>
+      <hr style="margin: 30px 0" />
+      <footer style="font-size: 0.9em; color: #999">
+        Ce message vous a été envoyé depuis le site web.
+      </footer>
+    </div>
+  </body>
 </html>

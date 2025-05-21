@@ -1,38 +1,36 @@
 .work-toggle {
-    margin-bottom: 1rem;
-  }
-  
-  .toggle-button.active {
-    background-color: #00d6b4;
-    color: black;
-  }
-  
-  .latest-work-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .work-toggle {
-    margin-bottom: 0;
-  }
-  
-  .toggle-button {
-    padding: 0.5rem 1rem;
-    margin-right: 0.5rem;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    border-radius: 4px;
-    color: white;
-    border-bottom: #00d6b4 2px solid;
-    transition: background-color 0.3s ease;
-  }
-  
+  margin-bottom: 1rem;
+}
 
-  .toggle-button:hover {
-    background-color: transparent;
-    color: #00d6b4;
-  }
-  
+.toggle-button.active {
+  background-color: #00d6b4;
+  color: black;
+}
+
+.latest-work-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.work-toggle {
+  margin-bottom: 0;
+}
+
+.toggle-button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
+  border-bottom: #00d6b4 2px solid;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: transparent;
+  color: #00d6b4;
+}

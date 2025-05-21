@@ -1,4 +1,4 @@
-const carousel = document.getElementById("carousel");
+const carousel = document.getElementById('carousel');
 const cardWidth = 340; // largeur d'une carte + marge
 let scrollX = 0;
 

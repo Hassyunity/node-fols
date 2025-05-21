@@ -40,14 +40,21 @@ router.get('/contact', function (req, res, next) {
 /* GET Project Details Pages */
 router.get('/projects/babels', function (req, res) {
   res.render('partials/projects/babels', {
-    title: 'Détail – Babel Goods'
+    title: 'Détail – Babel Goods',
   });
 });
 
 /* GET Hassistante Project Detail Page */
 router.get('/projects/hassistante', function (req, res) {
   res.render('partials/projects/hassistante', {
-    title: 'Détail – Hassistante'
+    title: 'Détail – Hassistante',
+  });
+});
+
+/* GET Bazar_naka Project Detail Page */
+router.get('/projects/bazar_naka', function (req, res) {
+  res.render('partials/projects/bazar_naka', {
+    title: 'Détail – Bazar Naka',
   });
 });
 
@@ -59,8 +66,8 @@ router.post('/submit-contact', async (req, res) => {
     service: 'gmail',
     auth: {
       user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS
-    }
+      pass: process.env.EMAIL_PASS,
+    },
   });
 
   // Lire le template HTML
@@ -83,9 +90,9 @@ router.post('/submit-contact', async (req, res) => {
       {
         filename: 'ia.jpg',
         path: path.join(__dirname, '../public/images/lg.png'),
-        cid: 'logoIA'
-      }
-    ]
+        cid: 'logoIA',
+      },
+    ],
   };
 
   try {

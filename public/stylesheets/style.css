@@ -1,5 +1,5 @@
 body {
-  background: #2C2E25;
+  background: #2c2e25;
   color: #ffffff;
   margin: 0;
   padding: 0;
@@ -57,7 +57,7 @@ body {
 }
 /* GENERAL SECTION STYLING */
 section {
-  background: #2C2E25;
+  background: #2c2e25;
   color: #ffffff;
 }
 
@@ -96,7 +96,7 @@ section {
   max-width: 600px;
   font-family: 'Lato', sans-serif;
   font-size: 16px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* FOOTER */

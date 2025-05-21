@@ -20,11 +20,13 @@
 .card {
   background: linear-gradient(to bottom right, #ffffff, #f8f9fc);
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   width: 320px;
   flex: 0 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   scroll-snap-align: start; /* Pour aligner correctement les éléments */
@@ -32,7 +34,7 @@
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .card img {

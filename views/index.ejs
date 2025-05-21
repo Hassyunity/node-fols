@@ -7,7 +7,7 @@
     <link rel='stylesheet' href='/stylesheets/works_options.css' />
     <link rel="icon" href="/images/lg.png" type="image/x-icon">
   </head>
-  
+
   <body>
     <% if (message === 'success') { %>
       <div class="success-message" id="success-message">✅ Votre message a été envoyé avec succès !</div>
@@ -21,18 +21,18 @@
     <section class="hero">
       <div class="hero-content">
         <h1>
-          Full of ideas? Grab a 
+          Full of ideas? Grab a
           <span class="coffee">
             <img src="images/coffe.gif" alt="Coffee cup" style="height: 1em; vertical-align: middle;">
           </span>
           — we’ll take care of the rest.
-        </h1>        
+        </h1>
         <a href="/contact" class="contact">Contact me</a>
       </div>
     </section>
-  
+
     <section class="content">
-      <div> 
+      <div>
         <div class="latest-work-header">
           <h2>Latest work:</h2>
           <div class="work-toggle">
@@ -43,22 +43,22 @@
         <div id="works-personal">
           <%- include('partials/works') %>
         </div>
-        
+
         <div id="works-professional" style="display: none;">
           <%- include('partials/works_pro') %>
         </div>
-        
+
       </div>
     </section>
-    
+
     <section class="content">
       <div>
         <%- include('partials/competence') %>
       </div>
       <%- include('partials/footer') %>
     </section>
-    
+
     <script src="javascripts/index.js"></script>
     <script src="javascripts/notifications.js"></script>
-  </body>  
+  </body>
 </html>
