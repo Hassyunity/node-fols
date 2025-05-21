@@ -14,6 +14,11 @@
   gap: 40px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  overflow-x: auto; /* Permet le scroll horizontal au doigt */
+  scrollbar-width: none; /* Pour Firefox */
+}
+.projects::-webkit-scrollbar {
+  display: none; /* Pour Chrome/Safari */
 }
 
 .card {
@@ -28,7 +33,7 @@
     box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  /* scroll-snap-align: start;  */
+  scroll-snap-align: start;
 }
 
 .card:hover {
@@ -144,7 +149,11 @@
   }
 
   .card {
-    width: 50px;
+    width: 30px;
     flex: 0 0 100%;
+  }
+
+  .scroll-btn {
+    display: none; /* Cacher les flèches sur mobile */
   }
 }
