@@ -1,23 +1,26 @@
-.work-toggle {
-  margin-bottom: 1rem;
-}
-
+/* Bouton actif */
 .toggle-button.active {
   background-color: #00d6b4;
   color: black;
 }
 
+/* Conteneur du header "Latest work" */
 .latest-work-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: left;
+  text-align: center;
 }
 
+/* Bloc contenant les boutons */
 .work-toggle {
   margin-bottom: 0;
 }
 
+/* Style général des boutons */
 .toggle-button {
   padding: 0.5rem 1rem;
   margin-right: 0.5rem;
@@ -33,4 +36,17 @@
 .toggle-button:hover {
   background-color: transparent;
   color: #00d6b4;
+}
+
+/* Responsive : affichage en colonne sur mobile */
+@media (max-width: 600px) {
+  .latest-work-header {
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .toggle-button {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
 }
