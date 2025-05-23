@@ -69,3 +69,33 @@
   margin-bottom: 20px;
   color: #00d6b4;
 }
+
+.technologies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+  gap: 50px;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.tech-item:hover {
+  transform: scale(1.1);
+  text-box: "Survoler pour voir la technologie";
+  color: #00d6b4;
+  border-bottom: 1px solid #00d6b4;
+  border-radius: 10px;
+}
+
+.tech-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 8px;
+}
