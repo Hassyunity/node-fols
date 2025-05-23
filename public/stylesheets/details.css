@@ -25,7 +25,7 @@
   height: auto;
   margin: 30px 0;
   border-radius: 8px;
-  border: 2px solid #00d6b4; /* Ajout d'une bordure verte */
+  border: 2px solid #00d6b4;
 }
 
 .project-detail .description {
