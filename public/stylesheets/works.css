@@ -157,3 +157,26 @@
     display: none; /* Cacher les flèches sur mobile */
   }
 }
+
+/* --- Responsive pour tablettes et ordinateurs tactiles --- */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .carousel-wrapper {
+    padding: 20px 15px;
+  }
+
+  .projects {
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card {
+    width: 260px;
+    flex: 0 0 auto;
+  }
+
+  .scroll-btn {
+    display: none; /* On cache les boutons pour interaction tactile */
+  }
+}
