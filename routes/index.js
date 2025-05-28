@@ -37,6 +37,16 @@ router.get('/contact', function (req, res, next) {
   res.render('contact', { title: 'Contact' });
 });
 
+/* GET Blog page. */
+router.get('/blog', function (req, res, next) {
+  res.render('blog', { title: 'Blog' });
+});
+
+/* GET comming soon page. */
+router.get('/comming-soon', function (req, res, next) {
+  res.render('comming-soon', { title: 'Comming Soon' });
+});
+
 /* GET Project Details Pages */
 router.get('/projects/babels', function (req, res) {
   res.render('partials/projects/babels', {

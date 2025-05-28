@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/blog.css" />
+  </head>
+
+  <body>
+    <header class="navbar"><%- include('partials/navbar') %></header>
+    <section class="content" id="blog">
+      <div class="blog-container">
+
+        <article class="blog-post">
+          <h2 class="post-title">🚀 My Portfolio Is Live!</h2>
+          <p class="post-date">Published on May 21, 2025</p>
+          <p class="post-summary">
+            I’m thrilled to announce the launch of my brand-new online portfolio! Designed to showcase my world, skills, and projects, this site offers a smooth and inspiring experience for every visitor. Dive into my journey, explore my work, and feel free to get in touch.
+          </p>
+          <a href="https://hassy-blog.onrender.com" class="read-more">Read the full article →</a>
+        </article>
+
+        <article class="blog-post">
+          <h2 class="post-title">💡 Tips for Better Project Management</h2>
+          <p class="post-date">Published on May 20, 2025</p>
+          <p class="post-summary">
+            Managing a project efficiently requires the right methods and tools. In this article, we share our best tips to organize your work, track progress, and keep your team motivated.
+          </p>
+          <a href="/comming-soon" class="read-more">Read the full article →</a>
+        </article>
+
+        <article class="blog-post">
+          <h2 class="post-title">🔧 Behind the Scenes: How We Build Our Tools</h2>
+          <p class="post-date">Published on May 10, 2025</p>
+          <p class="post-summary">
+            Go behind the scenes with our tech team and discover the technologies we use daily to build applications, test ideas, and deliver reliable solutions.
+          </p>
+          <a href="/comming-soon" class="read-more">Read the full article →</a>
+        </article>
+
+      </div>
+
+      <%- include('partials/footer') %>
+    </section>
+    <script src="javascripts/index.js"></script>
+  </body>
+</html>
