@@ -61,6 +61,13 @@ router.get('/projects/hassistante', function (req, res) {
   });
 });
 
+/* GET React node api Project Detail Page */
+router.get('/projects/react_node_api', function (req, res) {
+  res.render('partials/projects/react_node_api', {
+    title: 'Détail – React Node API',
+  });
+});
+
 /* GET Bazar_naka Project Detail Page */
 router.get('/projects/bazar_naka', function (req, res) {
   res.render('partials/projects/bazar_naka', {
