@@ -75,6 +75,13 @@ router.get('/projects/bazar_naka', function (req, res) {
   });
 });
 
+/* GET pulse Project Detail Page */
+router.get('/projects/pulsebyingedata', function (req, res) {
+  res.render('partials/projects/pulsebyingedata', {
+    title: 'Détail – Bazar Naka',
+  });
+});
+
 /* POST contact form */
 router.post('/submit-contact', async (req, res) => {
   const { name, email, message } = req.body;
