@@ -1,40 +1,81 @@
-.content {
-  background-image: url('/images/akona.jpg');
+/* Conteneur principal */
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  display: flex;
+  width: 90%;
+  min-height: 90vh;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Panneau gauche : image */
+.left-panel {
+  flex: 1;
+  background-image: url('/images/za.png');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  position: relative;
+}
+
+/* Dégradé sur l'image pour rendre le texte lisible si superposé */
+.left-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0));
+}
+
+/* Panneau droit : texte */
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.85);
 }
 
 .about-text {
-  color: white;
-  text-align: left;
-  padding: 40px 30px;
-  background-color: rgba(0, 0, 0, 0.6);
-  font-family: 'Lato', sans-serif;
-  backdrop-filter: blur(3px);
+  color: #fff;
+  padding: 50px;
   border-radius: 10px;
-  margin-top: 20vh;
-  margin-left: 20vh;
-  margin-right: 50%;
-  width: auto;
+  backdrop-filter: blur(3px);
 }
 
 .about-text h1 {
-  text-align: center;
-  margin-bottom: 20px;
   font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00eaff, #0078ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-text p {
-  line-height: 1.8;
+  line-height: 1.7;
   margin-bottom: 15px;
-  max-width: 80%;
 }
 
-.navbar {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  margin-right: 0 !important;
-  width: auto !important;
-  color: black !important;
+/* Responsive mobile */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .left-panel, .right-panel {
+    flex: none;
+    width: 100%;
+    min-height: 50vh;
+  }
+
+  .about-text {
+    padding: 30px 20px;
+  }
 }

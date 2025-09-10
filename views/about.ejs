@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/about.css" />
-    <link rel="icon" href="/images/lg.png" type="image/x-icon" />
-  </head>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/about.css" />
+  <link rel="icon" href="/images/lg.png" type="image/x-icon" />
+</head>
+<body>
+  <header class="navbar">
+    <%- include('partials/navbar') %>
+  </header>
 
-  <body>
-    <header class="navbar"><%- include('partials/navbar') %></header>
-    <section class="content" id="about">
-      <div class="about-text">
-        <h1>Hello! Have you met Hassy Tsihoarana? 👋</h1>
-        <p>
-          I'm a <strong>Ruby on Rails developer</strong> passionate about
-          <strong>artificial intelligence</strong> and
-          <strong>automation</strong>.
-        </p>
-        <p>
-          I have
-          <strong>three years of professional experience at Ingedata</strong> as
-          a web developer.
-        </p>
-        <p>
-          This experience helped me build strong skills in
-          <strong>organization</strong>, <strong>communication</strong>,
-          <strong>client support</strong>, and <strong>teamwork</strong>, while
-          strengthening my technical expertise.
-        </p>
-        <p>
-          I hold a
-          <strong>Bachelor's degree in Web Development and Integration</strong>
-          from <strong>ESTI Antanimena</strong>.
-        </p>
-        <p>
-          Today, I continue to grow in this field with passion—creating
-          efficient web applications and deepening my knowledge in
-          <strong>AI</strong> and <strong>automation technologies</strong>.
-        </p>
+  <div class="about-page">
+    <div class="about-container">
+      <!-- Panneau gauche : image -->
+      <div class="left-panel">
+        <!-- L'image est en background CSS -->
       </div>
-      <%- include('partials/footer') %>
-    </section>
-    <script src="javascripts/index.js"></script>
-  </body>
+
+      <!-- Panneau droite : texte -->
+      <div class="right-panel">
+        <div class="about-text">
+          <h1>Hello! Have you met Hassy Tsihoarana? 👋</h1>
+          <p>I'm a <strong>Ruby on Rails developer</strong> passionate about <strong>AI</strong> and <strong>automation</strong>.</p>
+          <p>I have <strong>three years of professional experience at Ingedata</strong> as a web developer.</p>
+          <p>This experience helped me build strong skills in <strong>organization</strong>, <strong>communication</strong>, <strong>client support</strong>, and <strong>teamwork</strong>.</p>
+          <p>I hold a <strong>Bachelor's degree in Web Development and Integration</strong> from <strong>ESTI Antanimena</strong>.</p>
+          <p>Today, I continue to grow in this field with passion—creating efficient web applications and deepening my knowledge in <strong>AI</strong> and <strong>automation technologies</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
 </html>

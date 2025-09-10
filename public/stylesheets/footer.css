@@ -17,6 +17,20 @@
   margin: 5px 0;
 }
 
+.footer-left {
+  flex: 1;
+  justify-content: flex-start;
+  align-items: left;
+  padding: 10px 20px;
+}
+
+.footer-right {
+  flex: 1;
+  justify-content: flex-end;
+  align-items: right;
+  padding: 10px 20px;
+}
+
 .vibes {
   font-size: 19px;
 }
