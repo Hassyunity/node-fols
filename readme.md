@@ -1,55 +1,69 @@
 # RealTimeX ⚡
 
-Hassy's Portfolio is a personal portfolio built with **Node.js**, **Express.js**, and **EJS**. It showcases my projects, skills, and offers a contact form for users to get in touch with me.
+Hassy's Portfolio est un portfolio personnel construit avec **Node.js**,
+**Express.js** et **EJS**.\
+Il met en avant mes projets, compétences et propose un formulaire de
+contact pour échanger avec moi.
+
+------------------------------------------------------------------------
 
 ## 🚀 Features
 
-- 📃 Display of my personal and professional information.
-- 🖥️ Portfolio showcasing projects with detailed descriptions.
-- ✉️ Contact form that allows users to send messages directly via email.
-- 🎨 Simple and fluid design for a user-friendly experience.
+-   📃 Affichage de mes informations personnelles et professionnelles.\
+-   🖥️ Portfolio présentant mes projets avec descriptions détaillées.\
+-   ✉️ Formulaire de contact permettant d'envoyer un message directement
+    par email.\
+-   🎨 Design simple, propre et fluide pour une expérience agréable.
+
+------------------------------------------------------------------------
+
+## 🖼️ Captures d'écran
+
+### 🏠 Page d'accueil
+
+![Accueil](./public/images/captures/home.png)
+
+### 🧩 Interface générale
+
+![Interface](./public/images/captures/portfolio.png)
+
+------------------------------------------------------------------------
 
 ## 📦 Installation
 
-1. **Clone the repository:**  
-   ```bash
-   git clone git@github.com:Hassyunity/node-fols.git
-   cd node-fols
-   ```
+1.  **Cloner le repository :**
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+    ``` bash
+    git clone git@github.com:Hassyunity/node-fols.git
+    cd node-fols
+    ```
 
-3. **Start the server:**
-   ```bash
-   npm start
-   ```
+2.  **Installer les dépendances :**
 
-## 🚀 Deploying to Netlify
+    ``` bash
+    npm install
+    ```
 
-1. **Install Netlify CLI globally:**
-   ```bash
-   npm install netlify-cli -g
-   ```
+3.  **Démarrer le serveur :**
 
-2. **Deploy your application:**
-   ```bash
-   netlify deploy
-   ```
+    ``` bash
+    npm start
+    ```
 
-Once deployed, your application will be accessible at:
-```
-https://your-site-name.netlify.app/
-```
+------------------------------------------------------------------------
 
-## 🖥️ Technologies Used
-- Node.js
-- Express.js
-- EJS
-- HTML / CSS / JavaScript
-- dotenv
+## 🚀 Déploiement sur Render
 
-## 📜 License
-This project is licensed under the MIT License.
+------------------------------------------------------------------------
+
+## 🖥️ Technologies utilisées
+
+-   Node.js\
+-   Express.js\
+-   EJS\
+-   HTML / CSS / JavaScript\
+
+------------------------------------------------------------------------
+
+## C'etait Hassy Tsihoarana
+

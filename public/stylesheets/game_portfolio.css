@@ -465,8 +465,12 @@ body::before {
     margin-bottom: 20px;
     text-transform: uppercase; /* style plus moderne */
     letter-spacing: 1.5px; /* espacement futuriste */
-    border-bottom: 2px solid #38ff7a;
     animation: neon-flicker 2s infinite alternate; /* petit effet clignotant */
+}
+
+.deploi {
+  color: black;
+  background: linear-gradient(90deg, transparent, #38ff7a, transparent);
 }
 
 .project-item {
@@ -610,11 +614,6 @@ body::before {
     font-size: 16px;
   }
 
-  .role-tag {
-    font-size: 14px;
-    padding: 5px 15px;
-  }
-
   /* ABOUT */
   .about-section {
     width: 90%;
@@ -708,11 +707,6 @@ body::before {
 
   .subtitle {
     font-size: 14px;
-  }
-
-  .role-tag {
-    font-size: 12px;
-    padding: 4px 12px;
   }
 
   /* ABOUT */

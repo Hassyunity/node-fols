@@ -13,6 +13,7 @@
   flex-direction: column;
   align-items: center;
   max-width: 180px; /* largeur du bloc */
+  transition: all 0.3s ease;
 }
 
 /* ===================== HEXAGONE ===================== */
@@ -51,10 +52,27 @@
 /* ===================== DESCRIPTION ===================== */
 .hex-description {
   font-size: 13px;
-  color: rgba(255,255,255,0.9);
+  color: #e0f7ff; /* couleur lumineuse */
   margin-top: 8px;
-  line-height: 1.4;
+  line-height: 1.5;
   text-align: center;
+  max-width: 180px;
+  transition: all 0.3s ease;
+  
+  /* Dégradé subtil sur le texte */
+  background: linear-gradient(90deg, #b5e8ff, #38ff7a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Ombre subtile pour profondeur */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Effet hover sur la description quand on survole l'hexagone */
+.hex-container:hover .hex-description {
+  transform: translateY(-3px);
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(56,255,122,0.6);
 }
 
 /* ===================== AVATAR RETOUR ===================== */
