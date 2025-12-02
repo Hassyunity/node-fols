@@ -1,74 +1,135 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/works_options.css' />
-    <link rel="icon" href="/images/lg.png" type="image/x-icon">
-    
-   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFPX1CBYFJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    gtag('config', 'G-EFPX1CBYFJ');
-  </script>
-  </head>
+  <link rel="stylesheet" href="/stylesheets/game_portfolio.css">
 
-  <body>
-    <% if (message === 'success') { %>
-      <div class="success-message" id="success-message">✅ Votre message a été envoyé avec succès !</div>
+  <% if (section === "about") { %>
+    <link rel="stylesheet" href="/stylesheets/about.css">
+  <% } %>
+  <% if (section === "ruby") { %>
+    <link rel="stylesheet" href="/stylesheets/ruby.css">
+  <% } %>
+  <% if (section === "contact") { %>
+    <link rel="stylesheet" href="/stylesheets/contact.css">
+  <% } %>
+  <% if (section === "services") { %>
+    <link rel="stylesheet" href="/stylesheets/services.css">
+  <% } %>
+  <% if (section === "react") { %>
+    <link rel="stylesheet" href="/stylesheets/ruby.css">
+  <% } %>
+  <% if (section === "nodejs") { %>
+    <link rel="stylesheet" href="/stylesheets/ruby.css">
+  <% } %>
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="top-left">
+    <img src="/images/icons/logo.png" class="logo">
+    <div class="site-date">Update: 02 Dec 2025</div>
+  </div>
+
+  <div class="top-center">
+    <p class="contact-info">📞 +261 34 16 020 73</p>
+    <a href="https://github.com/Hassyunity" target="_blank">
+      <img src="/images/icons/github.png" class="header-icon">
+    </a>
+    <a href="https://www.linkedin.com/in/tsihoarana-hassy-b8349020b/" target="_blank">
+      <img src="/images/icons/linkedin.png" class="header-icon">
+    </a>
+    <a href="https://codepen.io/hassycode" target="_blank">
+      <img src="/images/icons/codepen.png" class="header-icon">
+    </a>
+    <a href="/files/Hassy_cv.pdf" download>
+      <img src="/images/icons/cv.png" class="header-icon">
+    </a>
+  </div>
+
+  <div class="top-right">
+    <div class="coins-box">
+      <span class="coin-icon">🌟</span>
+      <span class="coins">70</span>
+    </div>
+  </div>
+</header>
+
+<main class="screen">
+
+  <!-- Side left hexagons -->
+  <div class="side-left">
+    <a href="/ruby"><div class="hex green <% if(section==='ruby'){%>active<% } %>"><img src="/images/logos/ruby.png" class="hex-icon"><span>Ruby</span></div></a>
+    <a href="/react"><div class="hex green <% if(section==='react'){%>active<% } %>"><img src="/images/logos/atom.png" class="hex-icon"><span>React</span></div></a>
+    <a href="/nodejs"><div class="hex yellow <% if(section==='nodejs'){%>active<% } %>"><img src="/images/logos/node-js.png" class="hex-icon"><span>Node.js</span></div></a>
+  </div>
+
+  <!-- Center -->
+  <div class="center">
+
+    <% if (section === "home") { %>
+      <div class="avatar-ring">
+          <img src="/images/za.png" class="avatar">
+      </div>
+
+      <h2 class="name">Hassy Tsihoarana</h2>
+      <h3 class="subtitle">Code Vibes</h3>
+
+      <div class="role-tag">Développeur Full-Stack</div>
+
+      <div class="projects-section">
+        <h3 class="projects-title">Projets déployés</h3>
+        <div class="projects-stats">
+            <div class="project-item render">🗄️ Render: 7 projets</div>
+            <div class="project-item netlify">⚡ Netlify: 4 projets</div>
+            <div class="project-item db">🛢️ PostgreSQL: 1 DB</div>
+        </div>
+      </div>
+
+      <button class="launch-btn">Launch Project</button>
+  <% } %>
+
+    <% if(section === "about") { %>
+      <%- include("sections/about") %>
     <% } %>
-    <% if (message === 'error') { %>
-      <div class="error-message" id="error-message">❌ Une erreur est survenue lors de l'envoi du message.</div>
+
+    <% if(section === "contact") { %>
+      <%- include("sections/contact", { messageStatus: messageStatus }) %>
     <% } %>
-    <header class="navbar">
-      <%- include('partials/navbar') %>
-    </header>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>
-          Full of ideas? Grab a
-          <span class="coffee">
-            <img src="images/coffe.gif" alt="Coffee cup" style="height: 1em; vertical-align: middle;">
-          </span>
-          — we’ll take care of the rest.
-        </h1>
-        <a href="/contact" class="contact">Contact me</a>
-      </div>
-    </section>
 
-    <section class="content">
-      <div>
-        <div class="latest-work-header">
-          <h2>Latest work:</h2>
-          <div class="work-toggle">
-            <button id="btn-personal" class="toggle-button active">Personal</button>
-            <button id="btn-professional" class="toggle-button">Professional</button>
-          </div>
-        </div>
-        <div id="works-personal">
-          <%- include('partials/works') %>
-        </div>
+    <% if(section === "services") { %>
+      <%- include("sections/services") %>
+    <% } %>
 
-        <div id="works-professional" style="display: none;">
-          <%- include('partials/works_pro') %>
-        </div>
+    <% if(section === "ruby") { %>
+      <%- include("sections/ruby") %>
+    <% } %>
 
-      </div>
-    </section>
+    <% if(section === "react") { %>
+      <%- include("sections/react") %>
+    <% } %>
 
-    <section class="content">
-      <div>
-        <%- include('partials/competence') %>
-      </div>
-      <%- include('partials/footer') %>
-    </section>
+    <% if(section === "nodejs") { %>
+      <%- include("sections/node") %>
+    <% } %>
 
-    <script src="javascripts/index.js"></script>
-    <script src="javascripts/notifications.js"></script>
-  </body>
+    <% if(section === "coming") { %>
+      <%- include("sections/coming") %>
+    <% } %>
+
+  </div>
+
+  <!-- Side right hexagons -->
+  <div class="side-right">
+    <a href="/about"><div class="hex green <% if(section==='about'){%>active<% } %>"><img src="/images/logos/person.png" class="hex-icon"><span>À Propos</span></div></a>
+    <a href="/contact"><div class="hex green <% if(section==='contact'){%>active<% } %>"><img src="/images/logos/contact-us.png" class="hex-icon"><span>Contact</span></div></a>
+    <a href="/services"><div class="hex red <% if(section==='services'){%>active<% } %>"><img src="/images/logos/customer-service.png" class="hex-icon"><span>Services</span></div></a>
+  </div>
+
+</main>
+
+</body>
 </html>

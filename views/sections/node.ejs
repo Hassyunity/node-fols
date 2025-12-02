@@ -1,0 +1,84 @@
+<div class="center-projects">
+
+  <h2 class="projects-title">Projets Node.js</h2>
+
+  <!-- Bouton retour -->
+  <a href="/" class="avatar-back">
+    <div class="avatar-ring-small">
+      <img src="/images/za.png" class="avatar-small">
+    </div>
+  </a>
+
+  <!-- Carrousel -->
+  <div class="carousel-container">
+    <!-- Liste scrollable -->
+    <div class="projects-list carousel-track">
+
+      <!-- Projet 1 -->
+      <div class="project-card">
+        <img src="/images/portfolio.png" alt="Portfolio" class="project-img">
+        <h3>Portfolio</h3>
+        <p>Portfolio</p>
+        <div class="project-tags">
+          <span>Node.js</span><span>Express</span><span>Analytics</span><span>Mail template</span>
+        </div>
+        <div class="project-actions">
+          <a class="project-btn" href="/coming" title="Code">🔗</a>
+          <a class="project-btn" href="/coming" title="Demo">🌐</a>
+          <a class="project-btn" href="https://hassy-blog.onrender.com/" target="_blank">✍️</a>
+          <a class="project-btn" href="/coming" title="More">➡️</a>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="project-card">
+        <img src="/images/node.png" alt="Node – RESTful API" class="project-img">
+        <h3>Node – RESTful API</h3>
+        <p>Development of a RESTful API</p>
+        <div class="project-tags">
+          <span>Node</span><span>REST API</span><span>Microservices</span>
+        </div>
+        <div class="project-actions">
+          <a class="project-btn" href="https://github.com/Hassyunity/React_Node" target="_blank">🔗</a>
+          <a class="project-btn" href="https://react-node-811w.onrender.com/" target="_blank">🌐</a>
+          <a class="project-btn" href="/coming">✍️</a>
+          <a class="project-btn" href="/coming">➡️</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+  const track = document.querySelector(".carousel-track");
+  const next = document.querySelector(".next-btn");
+  const prev = document.querySelector(".prev-btn");
+
+  const projects = track.querySelectorAll(".project-card");
+  const cardWidth = projects[0].offsetWidth;
+  const gap = 30;
+  const scrollAmount = cardWidth + gap;
+
+  // Flèches seulement si plus de 3 projets
+  if (projects.length <= 3) {
+    next.style.display = "none";
+    prev.style.display = "none";
+  }
+
+  next.addEventListener("click", () => {
+    track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+  prev.addEventListener("click", () => {
+    track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  function updateArrowVisibility() {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    prev.style.display = track.scrollLeft <= 0 ? "none" : "block";
+    next.style.display = track.scrollLeft >= maxScroll ? "none" : "block";
+  }
+
+  track.addEventListener("scroll", updateArrowVisibility);
+  updateArrowVisibility();
+</script>

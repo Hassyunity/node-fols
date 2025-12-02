@@ -5,84 +5,28 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 
-// ✅ Middleware pour rendre 'path' accessible dans toutes les vues
+// Middleware pour rendre 'path' accessible dans toutes les vues
 router.use((req, res, next) => {
   res.locals.path = req.path;
   next();
 });
 
-/* GET roadmap web page */
-router.get('/roadmap/web', function (req, res) {
-  res.render('roadmap/web', { title: 'Web Developer Journey' });
+// Pages principales
+router.get('/', (req, res) => res.render('index', { section: "home" }));
+router.get('/ruby', (req, res) => res.render('index', { section: "ruby" }));
+router.get('/react', (req, res) => res.render('index', { section: "react" }));
+router.get('/nodejs', (req, res) => res.render('index', { section: "nodejs" }));
+router.get('/about', (req, res) => res.render('index', { section: "about" }));
+router.get('/services', (req, res) => res.render('index', { section: "services" }));
+router.get('/coming', (req, res) => res.render('index', { section: "coming" }));
+
+// Page contact GET
+router.get('/contact', (req, res) => {
+  const messageStatus = req.query.message || null; // peut être 'success', 'error', ou null
+  res.render('index', { section: "contact", messageStatus });
 });
 
-/* GET roadmap Ai page */
-router.get('/roadmap/ai', function (req, res) {
-  res.render('roadmap/ai', { title: 'AI Developer Journey' });
-});
-
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  const message = req.query.message || null;
-  res.render('index', { title: 'Code Vibes', message });
-});
-
-/* GET about page. */
-router.get('/about', function (req, res, next) {
-  res.render('about', { title: 'About' });
-});
-
-/* GET contact page. */
-router.get('/contact', function (req, res, next) {
-  res.render('contact', { title: 'Contact' });
-});
-
-/* GET Blog page. */
-router.get('/blog', function (req, res, next) {
-  res.render('blog', { title: 'Blog' });
-});
-
-/* GET comming soon page. */
-router.get('/comming-soon', function (req, res, next) {
-  res.render('comming-soon', { title: 'Comming Soon' });
-});
-
-/* GET Project Details Pages */
-router.get('/projects/babels', function (req, res) {
-  res.render('partials/projects/babels', {
-    title: 'Détail – Babel Goods',
-  });
-});
-
-/* GET Hassistante Project Detail Page */
-router.get('/projects/hassistante', function (req, res) {
-  res.render('partials/projects/hassistante', {
-    title: 'Détail – Hassistante',
-  });
-});
-
-/* GET React node api Project Detail Page */
-router.get('/projects/react_node_api', function (req, res) {
-  res.render('partials/projects/react_node_api', {
-    title: 'Détail – React Node API',
-  });
-});
-
-/* GET Bazar_naka Project Detail Page */
-router.get('/projects/bazar_naka', function (req, res) {
-  res.render('partials/projects/bazar_naka', {
-    title: 'Détail – Bazar Naka',
-  });
-});
-
-/* GET pulse Project Detail Page */
-router.get('/projects/pulsebyingedata', function (req, res) {
-  res.render('partials/projects/pulsebyingedata', {
-    title: 'Détail – Bazar Naka',
-  });
-});
-
-/* POST contact form */
+// Envoi de message POST
 router.post('/submit-contact', async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -98,7 +42,6 @@ router.post('/submit-contact', async (req, res) => {
   const templatePath = path.join(__dirname, '../templates/mail_form.html');
   let htmlContent = fs.readFileSync(templatePath, 'utf-8');
 
-  // Injecter les variables dynamiques
   htmlContent = htmlContent
     .replace('{{name}}', name)
     .replace('{{email}}', email)
@@ -113,7 +56,7 @@ router.post('/submit-contact', async (req, res) => {
     attachments: [
       {
         filename: 'ia.jpg',
-        path: path.join(__dirname, '../public/images/lg.png'),
+        path: path.join(__dirname, '../public/images/icons/logo.png'),
         cid: 'logoIA',
       },
     ],
@@ -121,20 +64,17 @@ router.post('/submit-contact', async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.redirect('/?message=success');
+    res.redirect('/contact?message=success');
   } catch (error) {
     console.error(error);
-    res.redirect('/?message=error');
+    res.redirect('/contact?message=error');
   }
 });
 
+// Route ping
 router.get('/ping', (req, res) => {
   const token = req.query.token;
-
-  if (token !== process.env.PING_TOKEN) {
-    return res.status(401).send('Unauthorized');
-  }
-
+  if (token !== process.env.PING_TOKEN) return res.status(401).send('Unauthorized');
   res.status(200).send('pong');
 });
 

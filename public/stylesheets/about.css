@@ -1,81 +1,237 @@
-/* Conteneur principal */
-.about-page {
-  width: 100%;
-  min-height: 100vh;
+/* ===================== Conteneur général ===================== */
+.about-hexagons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  gap: 40px 25px; /* espacement horizontal et vertical */
+  margin-top: 20px;
 }
 
-.about-container {
+/* Conteneur pour chaque hexagone + description */
+.hex-container {
   display: flex;
-  width: 90%;
-  min-height: 90vh;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  flex-direction: column;
+  align-items: center;
+  max-width: 180px; /* largeur du bloc */
+}
+
+/* ===================== HEXAGONE ===================== */
+.about-hex {
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.12);
   border-radius: 15px;
-  overflow: hidden;
-}
-
-/* Panneau gauche : image */
-.left-panel {
-  flex: 1;
-  background-image: url('/images/za.png');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-/* Dégradé sur l'image pour rendre le texte lisible si superposé */
-.left-panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0));
-}
-
-/* Panneau droit : texte */
-.right-panel {
-  flex: 1;
+  clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0,0.85);
-}
-
-.about-text {
+  padding: 10px;
+  text-align: center;
   color: #fff;
-  padding: 50px;
-  border-radius: 10px;
-  backdrop-filter: blur(3px);
+  font-weight: bold;
+  font-size: 14px;
+  border: 3px solid #38ff7a;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.about-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, #00eaff, #0078ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.about-hex .hex-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+  object-fit: contain;
 }
 
-.about-text p {
-  line-height: 1.7;
-  margin-bottom: 15px;
+.about-hex span {
+  font-weight: 700;
+  color: #b5e8ff;
+  margin-bottom: 3px;
 }
 
-/* Responsive mobile */
+/* ===================== DESCRIPTION ===================== */
+.hex-description {
+  font-size: 13px;
+  color: rgba(255,255,255,0.9);
+  margin-top: 8px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ===================== AVATAR RETOUR ===================== */
+.avatar-back {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 100;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.avatar-ring-small {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.avatar-ring-small:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(56, 255, 122,0.7);
+}
+
+.avatar-small {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================== ÉTOILES ===================== */
+.stars {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.stars span {
+  color: #ffd700; /* jaune doré */
+  font-size: 16px;
+  text-shadow: 0 0 3px #fff, 0 0 5px #ffd700;
+}
+
+/* ===================== HOVER COLORS PAR CATÉGORIE ===================== */
+.about-hex:hover {
+  transform: translateY(-5px);
+}
+
+.about-hex.web:hover {
+  background-color: rgba(56, 255, 122, 0.3);
+  border-color: #38ff7a;
+}
+
+.about-hex.db:hover {
+  background-color: rgba(255, 85, 85, 0.3);
+  border-color: #ff5555;
+}
+
+.about-hex.ai:hover {
+  background-color: rgba(75, 150, 255, 0.3);
+  border-color: #4b96ff;
+}
+
+.about-hex.devops:hover {
+  background-color: rgba(255, 180, 50, 0.3);
+  border-color: #ffb432;
+}
+
+.about-hex.method:hover {
+  background-color: rgba(180, 50, 255, 0.3);
+  border-color: #b432ff;
+}
+
+.about-hex.diploma:hover {
+  background-color: rgba(255, 220, 0, 0.3);
+  border-color: #ffd900;
+}
+
+.about-hex.evolution:hover {
+  background-color: rgba(0, 255, 255, 0.3);
+  border-color: #00ffff;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* ----------- Écrans moyens (tablettes) ----------- */
 @media (max-width: 900px) {
-  .about-container {
-    flex-direction: column;
-    min-height: 100vh;
+  .about-hexagons {
+    gap: 35px 22px;
   }
 
-  .left-panel, .right-panel {
-    flex: none;
-    width: 100%;
-    min-height: 50vh;
+  .about-hex {
+    width: 115px;
+    height: 115px;
+    font-size: 13px;
   }
 
-  .about-text {
-    padding: 30px 20px;
+  .about-hex .hex-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hex-description {
+    font-size: 12px;
+    max-width: 150px;
+  }
+}
+
+/* ----------- Petits écrans & smartphones ----------- */
+@media (max-width: 600px) {
+  .about-hexagons {
+    gap: 30px 18px;
+  }
+
+  .hex-container {
+    max-width: 160px;
+  }
+
+  .about-hex {
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .about-hex .hex-icon {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 4px;
+  }
+
+  .hex-description {
+    font-size: 11px;
+    line-height: 1.35;
+    max-width: 140px;
+  }
+
+  .stars span {
+    font-size: 14px;
+  }
+
+  /* Avatar retour plus petit */
+  .avatar-ring-small {
+    width: 55px;
+    height: 55px;
+    border-width: 4px;
+  }
+}
+
+/* ---------- Très petits téléphones (360px / 320px) ---------- */
+@media (max-width: 400px) {
+  .about-hexagons {
+    gap: 25px 14px;
+  }
+
+  .about-hex {
+    width: 90px;
+    height: 90px;
+    font-size: 11px;
+  }
+
+  .about-hex .hex-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hex-description {
+    font-size: 10px;
+    max-width: 120px;
+  }
+
+  .avatar-ring-small {
+    width: 48px;
+    height: 48px;
   }
 }

@@ -1,0 +1,266 @@
+/* ========== CONTENEUR PRINCIPAL ========== */
+.center-projects {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  padding: 30px;
+  background: rgba(0,0,0,0.55);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  box-shadow: 0 0 15px rgba(56,255,122,0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* ========== TITRE ========== */
+.projects-title {
+  color: #38ff7a;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(56,255,122,0.5);
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Soulignement lumineux animé avec extrémités fondues */
+.projects-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #38ff7a, transparent);
+  border-radius: 10px;
+}
+
+/* Animation de brillance */
+@keyframes shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ========== CARROUSEL ========== */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.projects-list.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.projects-list.carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+.projects-list.carousel-track::-webkit-scrollbar-thumb {
+  background: #38ff7a;
+  border-radius: 10px;
+}
+
+/* ========== PALETTE DE COULEURS POUR BORDURES ========== */
+:root {
+  --color1: #ff4d4d;
+  --color2: #38ff7a;
+  --color3: #2dd4bf;
+  --color4: #ffb347;
+  --color5: #a64ca6;
+}
+
+/* ========== CARTES PROJET ========== */
+.project-card {
+  flex: 0 0 260px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Bordure colorée différente pour chaque projet */
+.project-card:hover:nth-child(1) { box-shadow: 0 0 15px var(--color1); }
+.project-card:hover:nth-child(2) { box-shadow: 0 0 15px var(--color2); }
+.project-card:hover:nth-child(3) { box-shadow: 0 0 15px var(--color3); }
+.project-card:hover:nth-child(4) { box-shadow: 0 0 15px var(--color4); }
+.project-card:hover:nth-child(5) { box-shadow: 0 0 15px var(--color5); }
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.project-card h3 {
+  color: #b5e8ff;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.project-card p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 10px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+.project-tags span {
+  background: rgba(56,255,122,0.15);
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #38ff7a;
+  font-weight: bold;
+}
+
+.project-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.project-btn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.project-btn:hover {
+  background: #ff4d4d;
+  transform: translateY(-3px);
+}
+
+/* ========== FLÈCHES ========== */
+.carousel-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.7);
+  border: 2px solid #38ff7a;
+  color: #38ff7a;
+  font-size: 22px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 12px;
+  z-index: 50;
+  transition: 0.2s;
+}
+.carousel-btn:hover {
+  background: #38ff7a;
+  color: black;
+}
+.prev-btn { left: -20px; }
+.next-btn { right: -20px; }
+
+/* ========== AVATAR RETOUR ========== */
+.avatar-back {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 100;
+}
+.avatar-ring-small {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.avatar-ring-small:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(56, 255, 122, 0.7);
+}
+.avatar-small {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1200px) {
+  .center-projects {
+    width: 80%;
+  }
+  
+  .project-card {
+    flex: 0 0 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .center-projects {
+    width: 90%;
+    padding: 25px;
+    top: 60px;
+  }
+  
+  .projects-title {
+    font-size: 26px;
+  }
+  
+  .carousel-container {
+    padding: 0 60px;
+  }
+  
+  .project-card {
+    flex: 0 0 240px;
+  }
+  
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .prev-btn { left: -15px; }
+  .next-btn { right: -15px; }
+}
+
+@media (max-width: 480px) {
+  .center-projects {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .carousel-container {
+    padding: 0 50px;
+  }
+  
+  .project-card {
+    flex: 0 0 220px;
+  }
+}

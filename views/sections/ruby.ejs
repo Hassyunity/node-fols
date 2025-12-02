@@ -1,0 +1,116 @@
+<div class="center-projects">
+
+  <h2 class="projects-title">Projets Ruby on Rails</h2>
+
+  <!-- Bouton retour -->
+  <a href="/" class="avatar-back">
+    <div class="avatar-ring-small">
+      <img src="/images/za.png" class="avatar-small">
+    </div>
+  </a>
+
+  <!-- Carrousel -->
+  <div class="carousel-container">
+    <!-- Liste scrollable -->
+    <div class="projects-list carousel-track">
+
+      <!-- Projet 1 -->
+      <div class="project-card">
+        <img src="/images/leader.png" alt="Bazar Naka" class="project-img">
+        <h3>Bazar Naka</h3>
+        <p>Plateforme web de supermarché.</p>
+        <div class="project-tags">
+          <span>Rails</span><span>CSS</span><span>PostgreSQL</span>
+        </div>
+        <div class="project-actions">
+          <a class="project-btn" href="https://github.com/Hassyunity/bazar_naka" target="_blank">🔗</a>
+          <a class="project-btn" href="https://bazar-naka.onrender.com/" target="_blank">🌐</a>
+          <a class="project-btn" href="/coming" title="Blog">✍️</a>
+          <a class="project-btn" href="/coming" title="More">➡️</a>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="project-card">
+        <img src="/images/b-mray.png" alt="Vita-car" class="project-img">
+        <h3>Vita-car</h3>
+        <p>En phase de conception.</p>
+        <div class="project-tags">
+          <span>Rails</span><span>Python</span><span>React</span>
+        </div>
+        <div class="project-actions">
+          <a class="project-btn" href="/coming" target="_blank">🔗</a>
+          <a class="project-btn" href="/coming" target="_blank">🌐</a>
+          <a class="project-btn" href="/coming">✍️</a>
+          <a class="project-btn" href="/coming">➡️</a>
+        </div>
+      </div>
+
+      <!-- Projet 3 -->
+      <div class="project-card">
+        <img src="/images/kross_matingy.png" alt="Kross_matingy" class="project-img">
+        <h3>Kross_matingy</h3>
+        <p>Description à venir.</p>
+        <div class="project-tags">
+          <span>Rails</span><span>IA</span><span>PostgreSQL</span>
+        </div>
+        <div class="project-actions">
+          <a class="project-btn" href="https://github.com/Hassyunity/React_Node" target="_blank">🔗</a>
+          <a class="project-btn" href="https://react-node-811w.onrender.com/" target="_blank">🌐</a>
+          <a class="project-btn" href="/coming">✍️</a>
+          <a class="project-btn" href="/coming">➡️</a>
+        </div>
+      </div>
+
+      <!-- Projet 4 -->
+      <div class="project-card">
+        <img src="/images/P4.png" alt="Gestion des tâches" class="project-img">
+        <h3>Gestion des tâches</h3>
+        <p>En development...</p>
+        <div class="project-tags">
+          <span>Rails</span><span>Python IA</span><span>Firebase</span>
+        </div>
+        <div class="project-actions">
+          <a class="project-btn" href="/coming">🔗</a>
+          <a class="project-btn" href="/coming">🌐</a>
+          <a class="project-btn" href="/coming">✍️</a>
+          <a class="project-btn" href="/coming">➡️</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+  const track = document.querySelector(".carousel-track");
+  const next = document.querySelector(".next-btn");
+  const prev = document.querySelector(".prev-btn");
+
+  const projects = track.querySelectorAll(".project-card");
+  const cardWidth = projects[0].offsetWidth;
+  const gap = 30;
+  const scrollAmount = cardWidth + gap;
+
+  // Flèches seulement si plus de 3 projets
+  if (projects.length <= 3) {
+    next.style.display = "none";
+    prev.style.display = "none";
+  }
+
+  next.addEventListener("click", () => {
+    track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+  prev.addEventListener("click", () => {
+    track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  function updateArrowVisibility() {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    prev.style.display = track.scrollLeft <= 0 ? "none" : "block";
+    next.style.display = track.scrollLeft >= maxScroll ? "none" : "block";
+  }
+
+  track.addEventListener("scroll", updateArrowVisibility);
+  updateArrowVisibility();
+</script>
