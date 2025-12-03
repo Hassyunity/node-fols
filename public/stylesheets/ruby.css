@@ -193,3 +193,20 @@
   .carousel-container { padding: 0 50px; }
   .project-card { flex: 0 0 220px; }
 }
+
+/* ========== RESPONSIVE : CACHER LES HEXAGONES LATERAUX SUR MOBILE ========== */
+@media (max-width: 700px) {
+  .side-left,
+  .side-right {
+    display: none !important;
+  }
+
+  .center-projects {
+    width: 100% !important;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    top: 70px;
+  }
+}
+

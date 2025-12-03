@@ -3,8 +3,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px 25px; /* espacement horizontal et vertical */
+  gap: 40px 25px;
   margin-top: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Conteneur pour chaque hexagone + description */
@@ -12,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 180px; /* largeur du bloc */
+  max-width: 180px;
   transition: all 0.3s ease;
 }
 
@@ -52,23 +55,20 @@
 /* ===================== DESCRIPTION ===================== */
 .hex-description {
   font-size: 13px;
-  color: #e0f7ff; /* couleur lumineuse */
+  color: #e0f7ff;
   margin-top: 8px;
   line-height: 1.5;
   text-align: center;
   max-width: 180px;
   transition: all 0.3s ease;
-  
-  /* Dégradé subtil sur le texte */
   background: linear-gradient(90deg, #b5e8ff, #38ff7a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Ombre subtile pour profondeur */
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Effet hover sur la description quand on survole l'hexagone */
+/* Effet hover description */
 .hex-container:hover .hex-description {
   transform: translateY(-3px);
   color: #ffffff;
@@ -115,110 +115,73 @@
 }
 
 .stars span {
-  color: #ffd700; /* jaune doré */
+  color: #ffd700;
   font-size: 16px;
   text-shadow: 0 0 3px #fff, 0 0 5px #ffd700;
 }
 
-/* ===================== HOVER COLORS PAR CATÉGORIE ===================== */
+/* ===================== COULEURS HOVER ===================== */
 .about-hex:hover {
   transform: translateY(-5px);
 }
 
-.about-hex.web:hover {
-  background-color: rgba(56, 255, 122, 0.3);
-  border-color: #38ff7a;
-}
-
-.about-hex.db:hover {
-  background-color: rgba(255, 85, 85, 0.3);
-  border-color: #ff5555;
-}
-
-.about-hex.ai:hover {
-  background-color: rgba(75, 150, 255, 0.3);
-  border-color: #4b96ff;
-}
-
-.about-hex.devops:hover {
-  background-color: rgba(255, 180, 50, 0.3);
-  border-color: #ffb432;
-}
-
-.about-hex.method:hover {
-  background-color: rgba(180, 50, 255, 0.3);
-  border-color: #b432ff;
-}
-
-.about-hex.diploma:hover {
-  background-color: rgba(255, 220, 0, 0.3);
-  border-color: #ffd900;
-}
-
-.about-hex.evolution:hover {
-  background-color: rgba(0, 255, 255, 0.3);
-  border-color: #00ffff;
-}
+.about-hex.web:hover { background-color: rgba(56, 255, 122, 0.3); border-color: #38ff7a; }
+.about-hex.db:hover { background-color: rgba(255, 85, 85, 0.3); border-color: #ff5555; }
+.about-hex.ai:hover { background-color: rgba(75,150,255,0.3); border-color: #4b96ff; }
+.about-hex.devops:hover { background-color: rgba(255,180,50,0.3); border-color: #ffb432; }
+.about-hex.method:hover { background-color: rgba(180,50,255,0.3); border-color: #b432ff; }
+.about-hex.diploma:hover { background-color: rgba(255,220,0,0.3); border-color: #ffd900; }
+.about-hex.evolution:hover { background-color: rgba(0,255,255,0.3); border-color: #00ffff; }
 
 /* ===================== RESPONSIVE ===================== */
 
-/* ----------- Écrans moyens (tablettes) ----------- */
+/* ----------- Tablettes ----------- */
 @media (max-width: 900px) {
   .about-hexagons {
     gap: 35px 22px;
   }
-
   .about-hex {
     width: 115px;
     height: 115px;
     font-size: 13px;
   }
-
   .about-hex .hex-icon {
     width: 40px;
     height: 40px;
   }
-
   .hex-description {
     font-size: 12px;
     max-width: 150px;
   }
 }
 
-/* ----------- Petits écrans & smartphones ----------- */
+/* ----------- Smartphones ----------- */
 @media (max-width: 600px) {
   .about-hexagons {
     gap: 30px 18px;
   }
-
   .hex-container {
     max-width: 160px;
   }
-
   .about-hex {
     width: 100px;
     height: 100px;
     font-size: 12px;
     padding: 8px;
   }
-
   .about-hex .hex-icon {
     width: 34px;
     height: 34px;
     margin-bottom: 4px;
   }
-
   .hex-description {
     font-size: 11px;
     line-height: 1.35;
     max-width: 140px;
   }
-
   .stars span {
     font-size: 14px;
   }
-
-  /* Avatar retour plus petit */
   .avatar-ring-small {
     width: 55px;
     height: 55px;
@@ -226,30 +189,44 @@
   }
 }
 
-/* ---------- Très petits téléphones (360px / 320px) ---------- */
+/* ----------- Téléphones très petits ----------- */
 @media (max-width: 400px) {
   .about-hexagons {
     gap: 25px 14px;
   }
-
   .about-hex {
     width: 90px;
     height: 90px;
     font-size: 11px;
   }
-
   .about-hex .hex-icon {
     width: 30px;
     height: 30px;
   }
-
   .hex-description {
     font-size: 10px;
     max-width: 120px;
   }
-
   .avatar-ring-small {
     width: 48px;
     height: 48px;
+  }
+}
+
+/* Empêche le scroll latéral */
+body {
+  overflow-x: hidden;
+}
+
+/* ===================== MOBILE : cacher hexagones latéraux ===================== */
+@media (max-width: 600px) {
+  .side-left,
+  .side-right {
+    display: none !important;
+  }
+
+  .center {
+    width: 100%;
+    padding: 0 10px;
   }
 }
