@@ -1,15 +1,16 @@
 <div class="center-coming">
-  <h2 class="coming-title">🚧 En Construction</h2>
+  <h2 class="coming-title">🚧 <%= lang === 'fr' ? 'En Construction' : 'Under Construction' %></h2>
 
   <p class="coming-text">
-    Cette fonctionnalité est en cours de développement.<br>
-    Revenez bientôt pour plus de contenu !
+    <%= lang === 'fr' ? 
+        'Cette fonctionnalité est en cours de développement.<br>Revenez bientôt pour plus de contenu !' : 
+        'This feature is under development.<br>Come back soon for more content!' %>
   </p>
 
   <div class="coming-icon">🔧</div>
 
   <!-- Bouton retour -->
-  <a href="/" class="avatar-back">
+  <a href="/?lang=<%= lang %>" class="avatar-back">
     <div class="avatar-ring-small">
       <img src="/images/za.png" class="avatar-small">
     </div>

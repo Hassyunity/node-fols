@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<%= lang %>">
 <head>
   <meta charset="UTF-8">
   <title>Portfolio</title>
@@ -31,7 +31,7 @@
 <header class="top-bar">
   <div class="top-left">
     <img src="/images/icons/logo.png" class="logo">
-    <div class="site-date">Update: 02 Dec 2025</div>
+    <div class="site-date"><%= lang === 'fr' ? 'Mise à jour: 03 Déc 2025' : 'Update: 03 Dec 2025' %></div>
   </div>
 
   <div class="top-center">
@@ -55,6 +55,17 @@
       <span class="coin-icon">🌟</span>
       <span class="coins">70</span>
     </div>
+
+    <!-- SWITCH LANG -->
+    <!-- SWITCH LANG -->
+    <div class="lang-switch">
+      <input type="checkbox" id="switch-lang" <%= lang === 'en' ? 'checked' : '' %>>
+      <label for="switch-lang" class="switch-label">
+        <span class="switch-text left">FR</span>
+        <span class="switch-text right">EN</span>
+        <span class="switch-circle"></span>
+      </label>
+    </div>
   </div>
 </header>
 
@@ -62,14 +73,13 @@
 
   <!-- Side left hexagons -->
   <div class="side-left">
-    <a href="/ruby"><div class="hex green <% if(section==='ruby'){%>active<% } %>"><img src="/images/logos/ruby.png" class="hex-icon"><span>Ruby</span></div></a>
-    <a href="/react"><div class="hex green <% if(section==='react'){%>active<% } %>"><img src="/images/logos/atom.png" class="hex-icon"><span>React</span></div></a>
-    <a href="/nodejs"><div class="hex yellow <% if(section==='nodejs'){%>active<% } %>"><img src="/images/logos/node-js.png" class="hex-icon"><span>Node.js</span></div></a>
+    <a href="/ruby?lang=<%= lang %>"><div class="hex green <% if(section==='ruby'){%>active<% } %>"><img src="/images/logos/ruby.png" class="hex-icon"><span>Ruby</span></div></a>
+    <a href="/react?lang=<%= lang %>"><div class="hex green <% if(section==='react'){%>active<% } %>"><img src="/images/logos/atom.png" class="hex-icon"><span>React</span></div></a>
+    <a href="/nodejs?lang=<%= lang %>"><div class="hex yellow <% if(section==='nodejs'){%>active<% } %>"><img src="/images/logos/node-js.png" class="hex-icon"><span>Node.js</span></div></a>
   </div>
 
   <!-- Center -->
   <div class="center">
-
     <% if (section === "home") { %>
       <div class="avatar-ring">
           <img src="/images/za.png" class="avatar">
@@ -78,10 +88,10 @@
       <h2 class="name">Hassy Tsihoarana</h2>
       <h3 class="subtitle">Code Vibes</h3>
 
-      <div class="role-tag">Développeur Full-Stack</div>
+      <div class="role-tag"><%= lang === 'fr' ? 'Développeur Full-Stack' : 'Full-Stack Developer' %></div>
 
       <div class="projects-section">
-        <h3 class="projects-title deploi">Projets déployés</h3>
+        <h3 class="projects-title deploi"><%= lang === 'fr' ? 'Projets déployés' : 'Deployed Projects' %></h3>
         <div class="projects-stats">
             <div class="project-item render">🗄️ Render: 7</div>
             <div class="project-item netlify">⚡ Netlify: 4</div>
@@ -89,47 +99,60 @@
         </div>
       </div>
 
-      <button class="launch-btn">Launch Project</button>
-  <% } %>
+      <a href="/coming?lang=<%= lang %>" class="launch-link">
+        <button class="launch-btn">
+          <%= lang === 'fr' ? 'Lancer l’aventure' : 'Launch the adventure' %>
+        </button>
+      </a>
+    <% } %>
 
     <% if(section === "about") { %>
-      <%- include("sections/about") %>
+      <%- include("sections/about", { lang: lang }) %>
     <% } %>
 
     <% if(section === "contact") { %>
-      <%- include("sections/contact", { messageStatus: messageStatus }) %>
+      <%- include("sections/contact", { messageStatus: messageStatus, lang: lang }) %>
     <% } %>
 
     <% if(section === "services") { %>
-      <%- include("sections/services") %>
+      <%- include("sections/services", { lang: lang }) %>
     <% } %>
 
     <% if(section === "ruby") { %>
-      <%- include("sections/ruby") %>
+      <%- include("sections/ruby", { lang: lang }) %>
     <% } %>
 
     <% if(section === "react") { %>
-      <%- include("sections/react") %>
+      <%- include("sections/react", { lang: lang }) %>
     <% } %>
 
     <% if(section === "nodejs") { %>
-      <%- include("sections/node") %>
+      <%- include("sections/node", { lang: lang }) %>
     <% } %>
 
     <% if(section === "coming") { %>
-      <%- include("sections/coming") %>
+      <%- include("sections/coming", { lang: lang }) %>
     <% } %>
-
   </div>
 
   <!-- Side right hexagons -->
   <div class="side-right">
-    <a href="/about"><div class="hex green <% if(section==='about'){%>active<% } %>"><img src="/images/logos/person.png" class="hex-icon"><span>À Propos</span></div></a>
-    <a href="/contact"><div class="hex green <% if(section==='contact'){%>active<% } %>"><img src="/images/logos/contact-us.png" class="hex-icon"><span>Contact</span></div></a>
-    <a href="/services"><div class="hex red <% if(section==='services'){%>active<% } %>"><img src="/images/logos/customer-service.png" class="hex-icon"><span>Services</span></div></a>
+    <a href="/about?lang=<%= lang %>"><div class="hex green <% if(section==='about'){%>active<% } %>"><img src="/images/logos/person.png" class="hex-icon"><span><%= lang === 'fr' ? 'À Propos' : 'About' %></span></div></a>
+    <a href="/contact?lang=<%= lang %>"><div class="hex green <% if(section==='contact'){%>active<% } %>"><img src="/images/logos/contact-us.png" class="hex-icon"><span>Contact</span></div></a>
+    <a href="/services?lang=<%= lang %>"><div class="hex red <% if(section==='services'){%>active<% } %>"><img src="/images/logos/customer-service.png" class="hex-icon"><span>Services</span></div></a>
   </div>
 
 </main>
+<script>
+  const switchLang = document.getElementById('switch-lang');
 
+  switchLang.addEventListener('change', () => {
+    const currentUrl = window.location.pathname;
+    const newLang = switchLang.checked ? 'en' : 'fr';
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set('lang', newLang);
+    window.location.href = `${currentUrl}?${searchParams.toString()}`;
+  });
+</script>
 </body>
 </html>

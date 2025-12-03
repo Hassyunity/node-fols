@@ -1,35 +1,39 @@
 <div class="contact-section">
 
-  <h2>Contactez-moi !</h2>
+  <h2><%= lang === 'fr' ? 'Contactez-moi !' : 'Contact Me!' %></h2>
 
-  <a href="/" class="avatar-back">
+  <a href="/?lang=<%= lang %>" class="avatar-back">
     <div class="avatar-ring-small">
       <img src="/images/za.png" class="avatar-small">
     </div>
   </a>
 
-  <p>Reach out! Let's start something together.</p>
+  <p>
+    <%= lang === 'fr' ? 'Contactez-moi ! Commençons quelque chose ensemble.' : 'Get in touch! Let’s start something together.' %>
+  </p>
 
   <% if(messageStatus === 'success'){ %>
     <p style="color:#38ff7a;font-weight:bold;margin-bottom:15px;">
-      ✅ Votre message a été envoyé avec succès !
+      <%= lang === 'fr' ? '✅ Votre message a été envoyé avec succès !' : '✅ Your message has been sent successfully!' %>
     </p>
   <% } else if(messageStatus === 'error'){ %>
     <p style="color:#ff4f4f;font-weight:bold;margin-bottom:15px;">
-      ❌ Une erreur est survenue, veuillez réessayer.
+      <%= lang === 'fr' ? '❌ Une erreur est survenue, veuillez réessayer.' : '❌ An error occurred, please try again.' %>
     </p>
   <% } %>
 
-  <form action="/submit-contact" method="POST" class="contact-form">
+  <form action="/submit-contact?lang=<%= lang %>" method="POST" class="contact-form">
     <div class="row">
-      <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
-      <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+      <input type="text" id="name" name="name" placeholder="<%= lang === 'fr' ? 'Entrez votre nom' : 'Enter your name' %>" required>
+      <input type="email" id="email" name="email" placeholder="<%= lang === 'fr' ? 'Entrez votre email' : 'Enter your email' %>" required>
     </div>
 
-    <label for="message">Message :</label>
-    <textarea id="message" name="message" placeholder="Entrez votre message" rows="5" required></textarea>
+    <label for="message"><%= lang === 'fr' ? 'Message :' : 'Message:' %></label>
+    <textarea id="message" name="message" placeholder="<%= lang === 'fr' ? 'Entrez votre message' : 'Enter your message' %>" rows="5" required></textarea>
 
-    <button type="submit" class="send-btn">Envoyer le message</button>
+    <button type="submit" class="send-btn">
+      <%= lang === 'fr' ? 'Envoyer le message' : 'Send Message' %>
+    </button>
   </form>
 
 </div>

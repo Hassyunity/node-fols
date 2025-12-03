@@ -11,7 +11,9 @@
 
   <!-- Carrousel -->
   <div class="carousel-container">
-    <!-- Liste scrollable -->
+    <button class="carousel-btn prev-btn">‹</button>
+    <button class="carousel-btn next-btn">›</button>
+
     <div class="projects-list carousel-track">
 
       <!-- Projet 1 -->
@@ -45,40 +47,11 @@
           <a class="project-btn" href="/coming">➡️</a>
         </div>
       </div>
+
+      <!-- Ajouter d'autres projets ici -->
+
     </div>
   </div>
 </div>
 
-<!-- JS -->
-<script>
-  const track = document.querySelector(".carousel-track");
-  const next = document.querySelector(".next-btn");
-  const prev = document.querySelector(".prev-btn");
-
-  const projects = track.querySelectorAll(".project-card");
-  const cardWidth = projects[0].offsetWidth;
-  const gap = 30;
-  const scrollAmount = cardWidth + gap;
-
-  // Flèches seulement si plus de 3 projets
-  if (projects.length <= 3) {
-    next.style.display = "none";
-    prev.style.display = "none";
-  }
-
-  next.addEventListener("click", () => {
-    track.scrollBy({ left: scrollAmount, behavior: "smooth" });
-  });
-  prev.addEventListener("click", () => {
-    track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-  });
-
-  function updateArrowVisibility() {
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    prev.style.display = track.scrollLeft <= 0 ? "none" : "block";
-    next.style.display = track.scrollLeft >= maxScroll ? "none" : "block";
-  }
-
-  track.addEventListener("scroll", updateArrowVisibility);
-  updateArrowVisibility();
-</script>
+<script src="/javascripts/carousel.js"></script>
