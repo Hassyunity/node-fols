@@ -1,9 +1,9 @@
 <div class="services-section">
 
-  <h2>Mes Services 💼</h2>
+  <h2><%= lang === 'fr' ? 'Mes Services 💼' : 'My Services 💼' %></h2>
   
   <!-- Avatar retour en bas à droite -->
-  <a href="/" class="avatar-back">
+  <a href="/?lang=<%= lang %>" class="avatar-back">
     <div class="avatar-ring-small">
       <img src="/images/za.png" class="avatar-small">
     </div>
@@ -15,28 +15,49 @@
     <div class="service-item">
       <div class="hex green">
         <img src="/images/icons/web.png" class="hex-icon">
-        <span>Web</span>
+        <span><%= lang === 'fr' ? 'Web' : 'Web Development' %></span>
       </div>
-      <p>Création de sites web, maintenance et optimisation de plateformes.</p>
+      <p>
+        <%= lang === 'fr' ? 'Création de sites web, maintenance et optimisation de plateformes.' : 
+                           'Website creation, maintenance, and platform optimization.' %>
+      </p>
     </div>
 
     <!-- Applications Mobiles -->
     <div class="service-item">
       <div class="hex yellow">
         <img src="/images/icons/mobile.png" class="hex-icon">
-        <span>Mobile</span>
+        <span><%= lang === 'fr' ? 'Mobile' : 'Mobile Apps' %></span>
       </div>
-      <p>Applications mobiles sur mesure, conseils et proposition de solutions adaptées.</p>
+      <p>
+        <%= lang === 'fr' ? 'Applications mobiles sur mesure, conseils et proposition de solutions adaptées.' : 
+                           'Custom mobile apps, consulting, and tailored solutions.' %>
+      </p>
     </div>
 
     <!-- Gestion de Projet -->
     <div class="service-item">
       <div class="hex red">
         <img src="/images/icons/agile.png" class="hex-icon">
-        <span>Gestion de Projet</span>
+        <span><%= lang === 'fr' ? 'Gestion de Projet' : 'Project Management' %></span>
       </div>
-      <p>Gestion DevOps, suivi de projet et coordination des équipes de développement.</p>
+      <p>
+        <%= lang === 'fr' ? 'Gestion DevOps, suivi de projet et coordination des équipes de développement.' : 
+                           'DevOps management, project tracking, and development team coordination.' %>
+      </p>
     </div>
 
+    <!-- Testing / Scénario & Test Utilisateur -->
+    <div class="service-item">
+      <div class="hex blue">
+        <img src="/images/icons/testing.png" class="hex-icon">
+        <span><%= lang === 'fr' ? 'Testing' : 'Testing' %></span>
+      </div>
+      <p>
+        <%= lang === 'fr' ? 
+            'Création de scénarios utilisateurs, tests unitaires et tests d’intégration pour assurer la qualité et l’expérience utilisateur.' : 
+            'User scenario creation, unit tests, and integration tests to ensure quality and user experience.' %>
+      </p>
+    </div>
   </div>
 </div>

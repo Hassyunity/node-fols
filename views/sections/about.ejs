@@ -1,7 +1,7 @@
 <div class="about-section">
-  <h2>Bonjour ! 👋 C'est Hassy Tsihoarana</h2>
+  <h2><%= lang === 'fr' ? "Hola ! 👋 C'est Hassy Tsihoarana" : "Hola! 👋 I'm Hassy Tsihoarana" %></h2>
 
-  <a href="/" class="avatar-back">
+  <a href="/?lang=<%= lang %>" class="avatar-back">
     <div class="avatar-ring-small">
       <img src="/images/za.png" class="avatar-small">
     </div>
@@ -13,25 +13,25 @@
     <div class="hex-container">
       <div class="hex about-hex web">
         <img src="/images/icons/role-model.png" class="hex-icon">
-        <span>Rôle</span>
+        <span><%= lang === 'fr' ? 'Rôle' : 'Role' %></span>
       </div>
-      <p class="hex-description">Full-Stack Developer</p>
+      <p class="hex-description"><%= lang === 'fr' ? 'Développeur Full-Stack' : 'Full-Stack Developer' %></p>
     </div>
 
     <!-- Expérience pro -->
     <div class="hex-container">
       <div class="hex about-hex db">
         <img src="/images/icons/sword.png" class="hex-icon">
-        <span>Expérience Pro</span>
+        <span><%= lang === 'fr' ? 'Expérience Pro' : 'Professional Experience' %></span>
       </div>
-      <p class="hex-description">3 ans chez Ingedata</p>
+      <p class="hex-description"><%= lang === 'fr' ? '3 ans chez Ingedata' : '3 years at Ingedata' %></p>
     </div>
 
     <!-- Développement Web -->
     <div class="hex-container">
       <div class="hex about-hex web">
         <img src="/images/icons/competence.png" class="hex-icon">
-        <span>Développement Web</span>
+        <span><%= lang === 'fr' ? 'Développement Web' : 'Web Development' %></span>
       </div>
       <p class="hex-description">Ruby on Rails, React, Node.js, Javascript, Testing</p>
     </div>
@@ -40,7 +40,7 @@
     <div class="hex-container">
       <div class="hex about-hex db">
         <img src="/images/icons/database.png" class="hex-icon">
-        <span>Bases de données</span>
+        <span><%= lang === 'fr' ? 'Bases de données' : 'Databases' %></span>
       </div>
       <p class="hex-description">PostgreSQL, MySQL</p>
     </div>
@@ -49,7 +49,7 @@
     <div class="hex-container">
       <div class="hex about-hex ai">
         <img src="/images/icons/ai.png" class="hex-icon">
-        <span>IA & Data</span>
+        <span><%= lang === 'fr' ? 'IA & Data' : 'AI & Data' %></span>
       </div>
       <p class="hex-description">NLP</p>
     </div>
@@ -58,7 +58,7 @@
     <div class="hex-container">
       <div class="hex about-hex devops">
         <img src="/images/icons/agile.png" class="hex-icon">
-        <span>DevOps / Outils</span>
+        <span><%= lang === 'fr' ? 'DevOps / Outils' : 'DevOps / Tools' %></span>
       </div>
       <p class="hex-description">Docker, Git, CI/CD, Render</p>
     </div>
@@ -67,7 +67,7 @@
     <div class="hex-container">
       <div class="hex about-hex method">
         <img src="/images/icons/metho.png" class="hex-icon">
-        <span>Méthodologies</span>
+        <span><%= lang === 'fr' ? 'Méthodologies' : 'Methodologies' %></span>
       </div>
       <p class="hex-description">Agile, Scrum, TDD, Clean Code</p>
     </div>
@@ -76,21 +76,21 @@
     <div class="hex-container">
       <div class="hex about-hex diploma">
         <img src="/images/icons/graduation.png" class="hex-icon">
-        <span>Diplôme</span>
+        <span><%= lang === 'fr' ? 'Diplôme' : 'Degree' %></span>
         <div class="stars">
           <span>★</span><span>★</span><span>★</span>
         </div>
       </div>
-      <p class="hex-description">Licence en Développement informatique de l'ESTI</p>
+      <p class="hex-description"><%= lang === 'fr' ? "Licence en Développement informatique de l'ESTI" : "Bachelor's in Computer Development from ESTI" %></p>
     </div>
 
     <!-- Evolution -->
     <div class="hex-container">
       <div class="hex about-hex evolution">
         <img src="/images/icons/present.png" class="hex-icon">
-        <span>Evolution</span>
+        <span><%= lang === 'fr' ? 'Evolution' : 'Growth' %></span>
       </div>
-      <p class="hex-description">Web & Mobile, Déploiement sécurisé, IA</p>
+      <p class="hex-description"><%= lang === 'fr' ? 'Web & Mobile, Déploiement sécurisé, IA' : 'Web & Mobile, Secure Deployment, AI' %></p>
     </div>
 
   </div>
