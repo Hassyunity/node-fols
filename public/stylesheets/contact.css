@@ -1,4 +1,4 @@
-/* GENERAL */
+/* ===================== GENERAL ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   height: 100vh;
 }
 
-/* BACKGROUND BLUR LAYER */
+/* BACKGROUND BLUR */
 body::before {
   content: "";
   position: absolute;
@@ -27,7 +27,7 @@ body::before {
   z-index: -1;
 }
 
-/* TOP BAR */
+/* ===================== TOP BAR ===================== */
 .top-bar {
   width: 100%;
   height: 60px;
@@ -41,7 +41,7 @@ body::before {
 
 .logo { width: 32px; height: 32px; }
 
-/* SCREEN */
+/* ===================== SCREEN ===================== */
 .screen {
   height: calc(100vh - 60px);
   display: flex;
@@ -58,7 +58,7 @@ body::before {
   padding: 20px;
 }
 
-/* HEXAGONS */
+/* ===================== HEXAGONS ===================== */
 .hex {
   width: 150px;
   height: 150px;
@@ -71,7 +71,6 @@ body::before {
   justify-content: center;
   align-items: center;
   padding: 15px;
-
   color: #fff;
   text-align: center;
   font-size: 15px;
@@ -89,13 +88,13 @@ body::before {
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
 }
 
-/* CENTER */
+/* ===================== CENTER ===================== */
 .center {
   text-align: center;
   color: #fff;
 }
 
-/* CONTACT SECTION */
+/* ===================== CONTACT CARD ===================== */
 .contact-section {
   position: absolute;
   top: 80px;
@@ -103,70 +102,46 @@ body::before {
   transform: translateX(-50%);
   width: 60%;
   padding: 30px;
-
-  background: rgba(0,0,0,0.55); /* fond flou transparent */
-  border-radius: 20px;          /* coins arrondis */
+  background: rgba(0,0,0,0.55);
+  border-radius: 20px;
   color: white;
   text-align: center;
-
   font-size: 18px;
   line-height: 1.5;
-  box-shadow: 0 0 15px rgba(56,255,122,0.5); /* ombre verte */
-  backdrop-filter: blur(4px); /* flou derrière */
+  box-shadow: 0 0 15px rgba(56,255,122,0.5);
+  backdrop-filter: blur(4px);
 }
 
-
-/* TITRE */
 .contact-section h2 {
   margin-bottom: 15px;
   color: #38ff7a;
   font-size: 28px;
 }
 
-/* TEXTE */
 .contact-section p {
   margin-bottom: 20px;
   font-size: 16px;
   opacity: 0.9;
 }
 
-/* FORMULAIRE */
+/* ===================== FORM ===================== */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Ligne Nom + Email */
+/* Row (name + email) */
 .contact-form .row {
   display: flex;
   gap: 15px;
 }
 
-/* Chaque champ prend 50% */
 .contact-form .row input {
   flex: 1;
 }
 
-/* Texte et textarea */
-.contact-form textarea {
-  width: 100%;
-  resize: none;
-  padding: 12px 15px;
-  border-radius: 12px;
-  border: 2px solid rgba(56,255,122,0.5);
-  background: rgba(0,0,0,0.4);
-  color: #fff;
-  font-size: 14px;
-  outline: none;
-}
-
-.contact-form label {
-  text-align: left;
-  font-weight: 600;
-  font-size: 14px;
-}
-
+.contact-form textarea,
 .contact-form input {
   padding: 12px 15px;
   border-radius: 12px;
@@ -177,12 +152,22 @@ body::before {
   outline: none;
 }
 
+.contact-form textarea {
+  resize: none;
+}
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: rgba(255,255,255,0.6);
 }
 
-/* BOUTON ENVOI */
+label {
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Send Button */
 .send-btn {
   background: #3ad269;
   color: #000;
@@ -191,7 +176,7 @@ body::before {
   border-radius: 25px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.2s;
 }
 
 .send-btn:hover {
@@ -199,7 +184,7 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* BOUTON RETOUR */
+/* Back Button */
 .back-btn {
   margin-top: 15px;
   background: #3ad269;
@@ -208,9 +193,8 @@ body::before {
   border: none;
   cursor: pointer;
   font-weight: bold;
-  text-decoration: none;
   color: #000;
-  transition: all 0.2s ease;
+  transition: 0.2s;
 }
 
 .back-btn:hover {
@@ -218,93 +202,42 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* HIDE CLASS */
-.hidden {
-  display: none !important;
-}
+/* Hide Utility */
+.hidden { display: none !important; }
 
+/* ===================================================== */
 /* ===================== RESPONSIVE ===================== */
+/* ===================================================== */
 
-/* ===================== ── 1200px (écrans moyens) ── ===================== */
+/* 1200px */
 @media (max-width: 1200px) {
-  .screen {
-    padding: 0 20px;
-    justify-content: space-around;
-  }
-
-  .hex {
-    width: 130px;
-    height: 130px;
-    font-size: 14px;
-  }
-
-  .hex-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .contact-section {
-    width: 70%;
-  }
+  .screen { padding: 0 20px; justify-content: space-around; }
+  .hex { width: 130px; height: 130px; font-size: 14px; }
+  .hex-icon { width: 50px; height: 50px; }
+  .contact-section { width: 70%; }
 }
 
-/* ===================== ── 900px (tablettes) ── ===================== */
+/* 900px */
 @media (max-width: 900px) {
-  .screen {
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 20px;
-    padding-top: 20px;
-  }
+  .screen { flex-direction: column; justify-content: flex-start; gap: 20px; padding-top: 20px; }
+  .side-left, .side-right { flex-direction: row; gap: 20px; }
 
-  .side-left,
-  .side-right {
-    flex-direction: row;
-    gap: 20px;
-  }
+  .hex { width: 120px; height: 120px; }
+  .hex-icon { width: 45px; height: 45px; }
 
-  .hex {
-    width: 120px;
-    height: 120px;
-    font-size: 13px;
-  }
-
-  .hex-icon {
-    width: 45px;
-    height: 45px;
-  }
-
-  .contact-section {
-    width: 85%;
-    font-size: 17px;
-  }
-
-  .contact-section h2 {
-    font-size: 24px;
-  }
+  .contact-section { width: 85%; }
+  .contact-section h2 { font-size: 24px; }
 }
 
-/* ===================== ── 700px (petites tablettes / grands smartphones) ── ===================== */
+/* 700px */
 @media (max-width: 700px) {
   .side-left,
   .side-right {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hex {
-    width: 110px;
-    height: 110px;
-    font-size: 12px;
-  }
-
-  .hex-icon {
-    width: 40px;
-    height: 40px;
+    display: none !important; /* MASQUER HEXAGONES */
   }
 
   .contact-section {
-    width: 90%;
+    width: 92%;
     padding: 25px;
   }
 
@@ -313,74 +246,26 @@ body::before {
   }
 }
 
-/* ===================== ── 550px (smartphones) ── ===================== */
+/* 550px */
 @media (max-width: 550px) {
-  .top-bar {
-    height: 55px;
-    padding: 0 15px;
-  }
+  .top-bar { height: 55px; padding: 0 15px; }
+  .logo { width: 28px; height: 28px; }
 
-  .logo {
-    width: 28px;
-    height: 28px;
-  }
-
-  .hex {
-    width: 100px;
-    height: 100px;
-    font-size: 11px;
-    padding: 10px;
-  }
-
-  .hex-icon {
-    width: 36px;
-    height: 36px;
-  }
-
-  .center h1,
-  .center h2 {
-    font-size: 20px;
-  }
-
-  .contact-section {
-    width: 92%;
-    padding: 20px;
-  }
-
-  .contact-section h2 {
-    font-size: 22px;
-  }
-
-  .contact-section p {
-    font-size: 15px;
-  }
+  .contact-section { width: 92%; padding: 20px; }
+  .contact-section h2 { font-size: 22px; }
+  .contact-section p { font-size: 15px; }
 }
 
-/* ===================== ── 400px (petits smartphones) ── ===================== */
+/* 400px */
 @media (max-width: 400px) {
-  body::before {
-    filter: blur(3px);
-  }
-
-  .hex {
-    width: 90px;
-    height: 90px;
-    font-size: 10px;
-  }
-
-  .hex-icon {
-    width: 30px;
-    height: 30px;
-  }
+  body::before { filter: blur(3px); }
 
   .contact-section {
     width: 95%;
     padding: 18px;
   }
 
-  .contact-section h2 {
-    font-size: 20px;
-  }
+  .contact-section h2 { font-size: 20px; }
 
   .send-btn,
   .back-btn {
