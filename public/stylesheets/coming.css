@@ -16,7 +16,8 @@
 .coming-title {
   font-size: 32px;
   color: #38ff7a;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  margin: 15px 0 10px 0;
 }
 
 .coming-text {
@@ -30,9 +31,59 @@
   margin-top: 10px;
 }
 
-@media (max-width: 600px) {
+.avatar-back {
+  display: inline-block;
+  margin-bottom: 20px; /* espace entre avatar et titre */
+  text-decoration: none;
+}
+
+.avatar-ring-small {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #38ff7a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.avatar-ring-small:hover {
+  transform: scale(1.1);
+}
+
+.avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
   .side-left,
   .side-right {
     display: none !important;
+  }
+
+  .center-coming {
+    width: 90%; /* s'adapte aux petits écrans */
+    /* padding: 20px 15px 15px 15px; */
+    top: 90px; /* remonte un peu le bloc */
+  }
+
+  .coming-title {
+    font-size: 24px;
+  }
+
+  .coming-text {
+    font-size: 16px;
+  }
+
+  .coming-icon {
+    font-size: 40px;
+  }
+
+  .avatar-back {
+    margin-bottom: 15px; /* réduit l'espace sur mobile */
   }
 }
