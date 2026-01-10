@@ -11,15 +11,16 @@
 
   <div class="services-list">
 
-    <!-- Développement Web -->
+    <!-- Développement Web + Testing -->
     <div class="service-item">
       <div class="hex green">
         <img src="/images/icons/web.png" class="hex-icon">
-        <span><%= lang === 'fr' ? 'Web' : 'Web Development' %></span>
+        <span><%= lang === 'fr' ? 'Web & Test' : 'Web & Testing' %></span>
       </div>
       <p>
-        <%= lang === 'fr' ? 'Création de sites web, maintenance et optimisation de plateformes.' : 
-                           'Website creation, maintenance, and platform optimization.' %>
+        <%= lang === 'fr' ? 
+            'Création de sites web, maintenance, optimisation de plateformes et tests utilisateurs pour assurer qualité et performance.' : 
+            'Website creation, maintenance, platform optimization, and user testing to ensure quality and performance.' %>
       </p>
     </div>
 
@@ -31,7 +32,7 @@
       </div>
       <p>
         <%= lang === 'fr' ? 'Applications mobiles sur mesure, conseils et proposition de solutions adaptées.' : 
-                           'Custom mobile apps, consulting, and tailored solutions.' %>
+                          'Custom mobile apps, consulting, and tailored solutions.' %>
       </p>
     </div>
 
@@ -43,21 +44,22 @@
       </div>
       <p>
         <%= lang === 'fr' ? 'Gestion DevOps, suivi de projet et coordination des équipes de développement.' : 
-                           'DevOps management, project tracking, and development team coordination.' %>
+                          'DevOps management, project tracking, and development team coordination.' %>
       </p>
     </div>
 
-    <!-- Testing / Scénario & Test Utilisateur -->
+    <!-- Automation -->
     <div class="service-item">
       <div class="hex blue">
-        <img src="/images/icons/testing.png" class="hex-icon">
-        <span><%= lang === 'fr' ? 'Testing' : 'Testing' %></span>
+        <img src="/images/icons/auto.png" class="hex-icon">
+        <span><%= lang === 'fr' ? 'Automation / n8n' : 'Automation / n8n' %></span>
       </div>
       <p>
         <%= lang === 'fr' ? 
-            'Création de scénarios utilisateurs, tests unitaires et tests d’intégration pour assurer la qualité et l’expérience utilisateur.' : 
-            'User scenario creation, unit tests, and integration tests to ensure quality and user experience.' %>
+            'Automatisation des tâches répétitives, intégration d’API et workflows avec n8n.' : 
+            'Automation of repetitive tasks, API integration, and workflows using n8n.' %>
       </p>
     </div>
+
   </div>
 </div>

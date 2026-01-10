@@ -25,8 +25,14 @@
   <% if (section === "nodejs") { %>
     <link rel="stylesheet" href="/stylesheets/ruby.css">
   <% } %>
+  <% if (section === "ia") { %>
+    <link rel="stylesheet" href="/stylesheets/ruby.css">
+  <% } %>
   <% if (section === "coming") { %>
     <link rel="stylesheet" href="/stylesheets/coming.css">
+  <% } %>
+  <% if (section === "vitacar") { %>
+    <link rel="stylesheet" href="/stylesheets/project_description.css">
   <% } %>
 </head>
 <body>
@@ -56,7 +62,7 @@
   <div class="top-right">
     <div class="coins-box">
       <span class="coin-icon">🌟</span>
-      <span class="coins">70 Repositories</span>
+      <span class="coins">71 Repositories</span>
     </div>
 
     <!-- SWITCH LANG -->
@@ -79,6 +85,7 @@
     <a href="/ruby?lang=<%= lang %>"><div class="hex green <% if(section==='ruby'){%>active<% } %>"><img src="/images/logos/ruby.png" class="hex-icon"><span>Ruby</span></div></a>
     <a href="/react?lang=<%= lang %>"><div class="hex green <% if(section==='react'){%>active<% } %>"><img src="/images/logos/atom.png" class="hex-icon"><span>React</span></div></a>
     <a href="/nodejs?lang=<%= lang %>"><div class="hex yellow <% if(section==='nodejs'){%>active<% } %>"><img src="/images/logos/node-js.png" class="hex-icon"><span>Node.js</span></div></a>
+    <a href="/ia?lang=<%= lang %>"><div class="hex yellow <% if(section==='ia'){%>active<% } %>"><img src="/images/logos/ia.png" class="hex-icon"><span>Automation</span></div></a>
   </div>
 
   <!-- Center -->
@@ -91,12 +98,16 @@
       <h2 class="name">Hassy Tsihoarana</h2>
       <h3 class="subtitle">Code Vibes</h3>
 
-      <div class="role-tag"><%= lang === 'fr' ? 'Développeur Full-Stack' : 'Full-Stack Developer' %></div>
+      <div class="role-tag">
+        <%= lang === 'fr' 
+            ? 'Développeur Full-Stack & Automation' 
+            : 'Full-Stack Developer & Automation' %>
+      </div>
 
       <div class="projects-section">
         <h3 class="projects-title deploi"><%= lang === 'fr' ? 'Projets déployés' : 'Deployed Projects' %></h3>
         <div class="projects-stats">
-            <div class="project-item render">🗄️ Render: 7</div>
+            <div class="project-item render">🗄️ Render: 8</div>
             <div class="project-item netlify">⚡ Netlify: 4</div>
             <div class="project-item db">🛢️ PostgreSQL: 1</div>
         </div>
@@ -133,8 +144,16 @@
       <%- include("sections/node", { lang: lang }) %>
     <% } %>
 
+    <% if(section === "ia") { %>
+      <%- include("sections/ia", { lang: lang }) %>
+    <% } %>
+
     <% if(section === "coming") { %>
       <%- include("sections/coming", { lang: lang }) %>
+    <% } %>
+
+    <% if(section === "vitacar") { %>
+      <%- include("sections/vitacar", { lang: lang }) %>
     <% } %>
   </div>
 

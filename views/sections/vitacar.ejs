@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vita-Car Project</title>
+  <link rel="stylesheet" href="/css/vitacar.css">
+</head>
+<body>
+
+  <div class="vitacar-container">
+    <!-- TITRE -->
+    <h1 class="vitacar-title">🚗 Vita-Car</h1>
+
+    <!-- GRILLE DES MICROSERVICES -->
+    <div class="microservices-grid">
+      <% const services = [
+          {name:'cars-service', desc: lang==='fr'?'Gestion des véhicules':'Vehicle management', icon:'💎'},
+          {name:'messages-service', desc: lang==='fr'?'Messagerie interne':'Internal messaging', icon:'💎'},
+          {name:'reservations-service', desc: lang==='fr'?'Gestion des réservations':'Reservation management', icon:'💎'},
+          {name:'sales-service', desc: lang==='fr'?'Suivi des ventes':'Sales tracking', icon:'💎'},
+          {name:'users-service', desc: lang==='fr'?'Gestion utilisateurs':'User management', icon:'💎'},
+          {name:'frontend', desc: lang==='fr'?'Interface React dynamique':'Dynamic React frontend', icon:'⚛️'},
+          {name:'python-ia', desc: lang==='fr'?'Assistante IA':'AI Assistante', icon:'🐍'}
+      ]; %>
+
+      <% services.forEach(s => { %>
+        <div class="microservice-card">
+          <div class="microservice-icon"><%= s.icon %></div>
+          <div class="microservice-name"><%= s.name %></div>
+          <div class="microservice-desc"><%= s.desc %></div>
+        </div>
+      <% }) %>
+    </div>
+
+    <!-- BOUTON RETOUR -->
+    <div class="vitacar-back">
+      <a href="/?lang=<%= lang %>" class="avatar-back">
+        <div class="avatar-ring-small">
+          <img src="/images/za.png" class="avatar-small">
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

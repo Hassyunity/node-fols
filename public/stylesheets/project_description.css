@@ -1,0 +1,185 @@
+/* ===================== PAGE VITACAR REDESIGN ===================== */
+
+.vitacar-container {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  padding: 35px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(56, 255, 122, 0.5);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* TITRE */
+.vitacar-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #38ff7a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(56, 255, 122, 0.8),
+               0 0 20px rgba(56, 255, 122, 0.5);
+}
+
+/* STATUT DU PROJET */
+.project-status {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffe550;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.project-status span {
+  font-size: 28px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* DESCRIPTION */
+.vitacar-text {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px rgba(0, 255, 180, 0.4);
+}
+
+/* STACK TECHNOLOGIQUE */
+.stack-container {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.stack-tag {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 12px 22px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #38ff7a;
+  color: #b5e8ff;
+  box-shadow: 0 0 12px rgba(56, 255, 122, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  cursor: default;
+}
+
+.stack-tag:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 0 20px rgba(56, 255, 122, 0.8);
+}
+
+/* MICROSERVICES GRID */
+.microservices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 2px;
+}
+
+/* MICROSERVICE CARD */
+.microservice-card {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #38ff7a;
+  box-shadow: 0 0 15px rgba(56, 255, 122, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.microservice-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 25px rgba(56, 255, 122, 0.7);
+  border-color: #4cff9e;
+}
+
+.microservice-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #38ff7a;
+}
+
+.microservice-name {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #b5e8ff;
+}
+
+.microservice-desc {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* BOUTON RETOUR */
+.vitacar-back {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.vitacar-back .avatar-ring-small {
+  width: 70px;
+  height: 70px;
+  border-width: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vitacar-back .avatar-ring-small:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(56, 255, 122, 0.7);
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+  .vitacar-container { width: 85%; padding: 28px; }
+  .vitacar-title { font-size: 32px; }
+}
+
+@media (max-width: 768px) {
+  .vitacar-title { font-size: 28px; }
+  .vitacar-text { font-size: 16px; }
+  .stack-tag { padding: 8px 18px; font-size: 14px; }
+
+  .side-left,
+  .side-right {
+    display: none !important; /* MASQUER HEXAGONES */
+  }
+}
+
+@media (max-width: 480px) {
+  .vitacar-container { width: 92%; padding: 22px; }
+  .vitacar-title { font-size: 24px; }
+  .vitacar-text { font-size: 15px; }
+  .stack-tag { font-size: 12px; padding: 6px 14px; }
+  .microservice-card { padding: 15px; }
+}
+
