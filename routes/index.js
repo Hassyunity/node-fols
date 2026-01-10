@@ -13,7 +13,7 @@ router.use((req, res, next) => {
 });
 
 // Pages principales
-const pages = ['home', 'ruby', 'react', 'nodejs', 'about', 'services', 'coming'];
+const pages = ['home', 'ruby', 'react', 'nodejs', 'ia', 'about', 'services', 'coming', 'vitacar'];
 
 pages.forEach(page => {
   const routePath = page === 'home' ? '/' : `/${page}`;
